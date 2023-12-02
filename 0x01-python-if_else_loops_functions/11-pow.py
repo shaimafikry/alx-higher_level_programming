@@ -5,11 +5,11 @@ def pow(a, b):
         return 1
     elif b < 0:
         b = b * -1
-        while (b != 0):
-             res = res * 1/a
-             b = b - 1
+        while b != 0:
+            res = res * 1 / a
+            b = b - 1
     else:
-        while (b != 0):
+        while b != 0:
             res = res * a
             b = b - 1
     return res
