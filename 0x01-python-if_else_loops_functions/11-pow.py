@@ -6,19 +6,10 @@ def pow(a, b):
     elif b < 0:
         b = b * -1
         while (b != 0):
-             print (b)
              res = res * 1/a
              b = b - 1
     else:
         while (b != 0):
-            print (b)
             res = res * a
             b = b - 1
     return res
-
-
-print(pow(2, 2))
-print(pow(98, 2))
-print(pow(98, 0))
-print(pow(1000, -2))
-print(pow(4, 5))
