@@ -2,7 +2,7 @@
 def add_tuple(tuple_a=(), tuple_b=()):
     if not len(tuple_a) and not len(tuple_b):
         t = (0, 0)
-    if not len(tuple_a):
+    elif not len(tuple_a):
         t = tuple_b
     elif not len(tuple_b):
         t = tuple_a
