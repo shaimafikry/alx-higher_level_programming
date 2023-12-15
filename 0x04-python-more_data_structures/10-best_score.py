@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# Write a function that returns a key with the biggest integer value.(a_dictionary):
+# function that returns a key with the biggest integer value.(a_dictionary):
 # You can assume all values only integers
 # If no score found, return None
 # You can assume all students have a different score
