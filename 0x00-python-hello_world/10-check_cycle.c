@@ -22,8 +22,12 @@ int check_cycle(listint_t *list)
 	do {
 		loop = loop->next;/*loops threoug lists*/
 		if (loop  == NULL)
+		{
+			free(loop);
 			return (0); /*linked list is not cycle*/
+		}
 		num = loop->n;
 	} while (check != num);
+	free(loop);
 	return (1); /*linked list is cycle*/
 }
