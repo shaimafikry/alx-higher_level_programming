@@ -6,21 +6,17 @@
 */
 int check_cycle(listint_t *list)
 {
-	listint_t *loop;
-	int check;
+	listint_t *current;
+	listint_t *prev;
 
-	if (list == NULL)
+	current = list;
+	prev = NULL;
+	while (current != NULL)
 	{
-		return (0);
+		if (current == prev)
+			return (1);
+		prev = current;
+		current = current->next;
 	}
-	check = list->n;/*first value in linked list*/
-	loop = list;
-	do {
-		loop = loop->next;/*loops threoug lists*/
-		if (loop  == NULL)
-		{
-			return (0); /*linked list is not cycle*/
-		}
-	} while (check != loop->n);
-	return (1); /*linked list is cycle*/
+	return (0); /*linked list is cycle*/
 }
