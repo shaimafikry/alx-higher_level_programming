@@ -9,29 +9,24 @@ listint_t *insert_node(listint_t **head, int number)
 {
 	listint_t *loop;
 	listint_t *new;
-	int check;
 
 	if (head == NULL)
 	{
 		return (NULL);
 	}
-	loop = malloc(sizeof(listint_t));
-	if (loop == NULL)
-		return (NULL);
 	new = malloc(sizeof(listint_t));
 	if (new == NULL)
 		return (NULL);
+
 	new->n = number;
 	loop = *head;
-	check = loop->n;/*first value in linked list*/
-	while (loop->next != NULL)
-	{
-		if (number >= check)
+	do {
+		if (number >= loop->n)
 		{
 			new->next = loop;
 			loop = new;
 		}
 		loop = loop->next;
-	}
-	return (new); 
+	} while (loop->next != NULL);
+	return (new);
 }
