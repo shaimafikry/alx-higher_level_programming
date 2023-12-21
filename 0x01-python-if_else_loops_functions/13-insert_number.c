@@ -1,9 +1,9 @@
 #include "lists.h"
 /**
- * insert_node: insterts a node in a sorted linked list
+ * insert_node - insterts a node in a sorted linked list
  * @head: first in linked list
  * @number: number to be added
- * @Return: pointer to a new node
+ * Return: pointer to a new node
 */
 listint_t *insert_node(listint_t **head, int number)
 {
@@ -25,13 +25,12 @@ listint_t *insert_node(listint_t **head, int number)
 		*head = new;
 	}
 	else
-	{ 
+	{
 		loop = *head;
-		while (loop->next != NULL && loop->n > number)
+		while (loop->next != NULL && loop->next->n < number)
 			loop = loop->next;
-	
 		new->next = loop->next;
-		loop = new;
+		loop->next = new;
 	}
 	return (new);
 }
