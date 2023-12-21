@@ -6,13 +6,16 @@
 */
 int check_cycle(listint_t *list)
 {
-
+	if (list == NULL)
+	{
+		return (0);
+	}
 	listint_t *loop;
 	int check, num;
 
 	loop = malloc(sizeof(listint_t));
 	if (loop == NULL)
-		return (-1);
+		return (0);
 
 	check = list->n;/*first value in linked list*/
 	loop = list->next;
