@@ -28,6 +28,5 @@ int check_cycle(listint_t *list)
 		}
 		num = loop->n;
 	} while (check != num);
-	free(loop);
 	return (1); /*linked list is cycle*/
 }
