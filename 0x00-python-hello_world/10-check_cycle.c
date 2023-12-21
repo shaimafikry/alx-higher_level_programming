@@ -18,14 +18,12 @@ int check_cycle(listint_t *list)
 		return (0);
 
 	check = list->n;/*first value in linked list*/
-	loop = list->next;
-	num = loop->n;/*second value in linked list*/
-	while (check != num)
-	{
+	loop = list;
+	do {
 		loop = loop->next;/*loops threoug lists*/
 		if (loop  == NULL)
 			return (0); /*linked list is not cycle*/
 		num = loop->n;
-	}
+	} while (check != num);
 	return (1); /*linked list is cycle*/
 }
