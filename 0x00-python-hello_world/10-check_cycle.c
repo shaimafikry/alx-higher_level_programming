@@ -6,13 +6,13 @@
 */
 int check_cycle(listint_t *list)
 {
+	listint_t *loop;
+	int check, num;
+
 	if (list == NULL)
 	{
 		return (0);
 	}
-	listint_t *loop;
-	int check, num;
-
 	loop = malloc(sizeof(listint_t));
 	if (loop == NULL)
 		return (0);
