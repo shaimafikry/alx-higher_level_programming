@@ -7,26 +7,20 @@
 int check_cycle(listint_t *list)
 {
 	listint_t *loop;
-	int check, num;
+	int check;
 
 	if (list == NULL)
 	{
 		return (0);
 	}
-	loop = malloc(sizeof(listint_t));
-	if (loop == NULL)
-		return (0);
-
 	check = list->n;/*first value in linked list*/
 	loop = list;
 	do {
 		loop = loop->next;/*loops threoug lists*/
 		if (loop  == NULL)
 		{
-			free(loop);
 			return (0); /*linked list is not cycle*/
 		}
-		num = loop->n;
-	} while (check != num);
+	} while (check != loop->n);
 	return (1); /*linked list is cycle*/
 }
