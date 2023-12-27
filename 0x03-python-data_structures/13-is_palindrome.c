@@ -10,7 +10,7 @@ int is_palindrome(listint_t **head)
 	listint_t *current, *first, *end;
 	size_t  t = 0, m = 0;
 
-	if (*head == NULL)
+	if (*head == NULL || (*head)->next == NULL)
 		return (1);
 	current = *head;
 	first = current;
@@ -20,9 +20,6 @@ int is_palindrome(listint_t **head)
 		current = current->next;
 		m++;
 	}
-	printf("%ld\n", m);
-	printf("this is the first node %d \n", first->n);
-	printf("this is the last noe %d \n", end->n);
 	current = *head;
 	while(current != NULL)
 	{
@@ -39,11 +36,7 @@ int is_palindrome(listint_t **head)
 			{
 				end = end->next;
 			}
-			
 			end->next= NULL;
-			
-			printf("this is the first noe %d %ld \n", first->n, t);
-			printf("this is the last noe %d \n", end->n);
 		}
 		else 
 		{
