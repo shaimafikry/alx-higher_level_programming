@@ -7,47 +7,48 @@
 */
 int is_palindrome(listint_t **head)
 {
-	listint_t *current, *first, *end, *prev;
+	listint_t *current, *first, *end;
+	size_t  t = 0, m = 0;
 
 	if (*head == NULL)
 		return (1);
 	current = *head;
-	current = malloc(sizeof(listint_t));
-	first = malloc(sizeof(listint_t));
-	end = malloc(sizeof(listint_t));
-	prev = malloc(sizeof(listint_t));
-	first->n = current->n;
+	first = current;
 	while (current != NULL)
 	{
-		end->n = current->n;
+		end = current;
 		current = current->next;
+		m++;
 	}
+	printf("%ld\n", m);
+	printf("this is the first node %d \n", first->n);
+	printf("this is the last noe %d \n", end->n);
 	current = *head;
 	while(current != NULL)
 	{
+		t++;
+		
 		if (first->n == end->n)
 		{
+			if (t == m/2)
+				break;
 			current = current->next;
-			first->n = current->n;
-			prev = current;
-			while (prev != NULL)
+			first = current;
+			end = current;
+			while (end->next->next != NULL)
 			{
-				end->n = prev->n;
-				prev = prev->next;
+				end = end->next;
 			}
+			
+			end->next= NULL;
+			
+			printf("this is the first noe %d %ld \n", first->n, t);
+			printf("this is the last noe %d \n", end->n);
 		}
 		else 
 		{
-			free(current);
-			free(prev);
-			free(first);
-			free(end);
 			return (0);
 		}
 	}
-	free(current);
-	free(prev);
-	free(first);
-	free(end);
 	return (1);
 }
