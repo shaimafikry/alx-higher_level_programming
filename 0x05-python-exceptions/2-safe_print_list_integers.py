@@ -9,6 +9,7 @@ def safe_print_list_integers(my_list=[], x=0):
         print()
         return m
     except IndexError:
+        return 0
         print("list index out of range")
 
 my_list = [1, 2, 3, 4, 5]
