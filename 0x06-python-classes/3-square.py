@@ -28,18 +28,14 @@ class Square:
     def size(self):
         """
         Getter method to retrieve the size attribute.
-        
         Returns:
         - int: The size of the square.
         """
         return self.__size
-
     def area(self):
         """return sqare area
-        
         Args:
         - no args
-        
         Return:
         square area
         """
