@@ -41,3 +41,5 @@ class Square:
         square area
         """
         return self.__size ** 2
+     def my_print(self):
+         
