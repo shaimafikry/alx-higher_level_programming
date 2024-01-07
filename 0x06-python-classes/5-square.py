@@ -63,11 +63,11 @@ class Square:
         """
         m = 0
         for i in range(self.area()):
-            m +=1
+            m += 1
             print("#", end="")
             if m == self.size:
                 print()
                 m = 0
         if (self.size == 0):
             print()
-
+            
