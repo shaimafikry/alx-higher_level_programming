@@ -11,12 +11,13 @@ class Square:
     Attributes:
     size: size of square
     """
-    def __init__(Self, __size = 0):
+    def __init__(self, size):
         """initilizations
 
         Args:
             Self (size): square size
         """
+        self.__size = size
         
 
 my_square = Square(3)
