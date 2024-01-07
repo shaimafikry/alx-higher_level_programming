@@ -11,4 +11,5 @@ class Square:
     Attributes:
     - None
     """
+
     pass
