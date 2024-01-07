@@ -71,5 +71,18 @@ def position(self):
         square area
         """
         
-     def my_print(self):
+         def my_print(self):
+        """print the square to stdout
+
+            Args: no args
+        """
+        m = 0
+        for i in range(self.area()):
+            m += 1
+            print("#", end="")
+            if m == self.size:
+                print()
+                m = 0
+        if (self.size == 0):
+            print()
          
