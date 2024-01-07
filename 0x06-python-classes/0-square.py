@@ -2,11 +2,10 @@
 """
 This module defines an empty class called Square.
 """
-
-class Square:
+class Square :
     """
     This class represents a geometric square.
-    
+
     Attributes:
     - None
     """
