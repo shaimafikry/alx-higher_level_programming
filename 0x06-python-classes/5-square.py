@@ -70,4 +70,3 @@ class Square:
                 m = 0
         if (self.size == 0):
             print()
-            
