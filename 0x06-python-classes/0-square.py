@@ -1,14 +1,13 @@
-#!/usr/bin/python3
+#!/usr/bin/pythoy3
 """
-empty class
-
+This module defines an empty class called Square.
 """
 
 class Square:
-
     """
-
-    This class defines a square.
-
+    This class represents a geometric square.
+    
+    Attributes:
+    - None
     """
     pass
