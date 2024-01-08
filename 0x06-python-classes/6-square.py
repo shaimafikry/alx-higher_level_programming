@@ -68,7 +68,7 @@ class Square:
     def position(self, value):
         """setting the size attribute
         Args:
-            Self (position): 
+            Self (position):
             value : the new position
         """
         if not isinstance(value, tuple) or len(value) != 2:
