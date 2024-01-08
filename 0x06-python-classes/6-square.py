@@ -33,6 +33,20 @@ class Square:
         """
         return self.__size
 
+    @size.setter
+    def size(self, value):
+        """setting the size attribute
+        Args:
+            Self (size): square size
+            vaue : the new size
+        """
+        if not isinstance(value, int):
+            raise TypeError("size must be an integer")
+        if value < 0:
+            raise ValueError("size must be >= 0")
+        else:
+            self.__size = value
+
     def area(self):
         """return sqare area
         Args:
@@ -41,5 +55,18 @@ class Square:
         square area
         """
         return self.__size ** 2
-     def my_print(self):
-         
+
+    def my_print(self):
+        """print the square to stdout
+
+            Args: no args
+        """
+        m = 0
+        for i in range(self.area()):
+            m += 1
+            print("#", end="")
+            if m == self.size:
+                print()
+                m = 0
+        if (self.size == 0):
+            print()
