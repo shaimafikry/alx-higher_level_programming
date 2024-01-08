@@ -28,7 +28,7 @@ class Square:
         - int: The size of the square.
         """
         return self.__size
-
+    @property
     def position(self):
         """
         Getter method to retrieve the size attribute.
@@ -50,19 +50,14 @@ class Square:
             raise ValueError("size must be >= 0")
         else:
             self.__size = value
-
+    @position.setter
     def position(self, value):
         """setting the size attribute
         Args:
             Self (position): 
             value : the new position
         """
-        if (
-            not isinstance(value, tuple)
-            or len(value) != 2
-            or all(isinstance(i, int) for i in value)
-            or not any(i < 0 for i in value)
-        ):
+        if not isinstance(value, tuple) or len(value) != 2 or all(isinstance(i, int) for i in value) or not any(i < 0 for i in value):
             raise TypeError(" position must be a tuple of 2 positive integers")
         else:
             self.__position = value
