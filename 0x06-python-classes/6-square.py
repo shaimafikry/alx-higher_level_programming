@@ -12,17 +12,13 @@ class Square:
     size: size of square
     """
 
-    def __init__(self, size=0):
+    def __init__(self, size=0, position=(0, 0)):
         """initilizations
         Args:
-            Self (size): square size
+            Self (position): square position
         """
-        if not isinstance(size, int):
-            raise TypeError("size must be an integer")
-        if size < 0:
-            raise ValueError("size must be >= 0")
-        else:
-            self.__size = size
+        self.__size = size
+        self.__position = position
 
     @property
     def size(self):
@@ -32,6 +28,14 @@ class Square:
         - int: The size of the square.
         """
         return self.__size
+
+    def position(self):
+        """
+        Getter method to retrieve the size attribute.
+        Returns:
+        -position
+        """
+        return self.__position
 
     @size.setter
     def size(self, value):
@@ -47,6 +51,22 @@ class Square:
         else:
             self.__size = value
 
+    def position(self, value):
+        """setting the size attribute
+        Args:
+            Self (position): 
+            value : the new position
+        """
+        if (
+            not isinstance(value, tuple)
+            or len(value) != 2
+            or all(isinstance(i, int) for i in value)
+            or not any(i < 0 for i in value)
+        ):
+            raise TypeError(" position must be a tuple of 2 positive integers")
+        else:
+            self.__position = value
+
     def area(self):
         """return sqare area
         Args:
@@ -61,12 +81,7 @@ class Square:
 
             Args: no args
         """
-        m = 0
-        for i in range(self.area()):
-            m += 1
-            print("#", end="")
-            if m == self.size:
-                print()
-                m = 0
-        if (self.size == 0):
+        if self.size == 0:
             print()
+        for i in range(self.area()):
+            print("_" * self.__position[0] + "#" * self.__size)

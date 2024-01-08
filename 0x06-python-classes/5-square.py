@@ -68,5 +68,5 @@ class Square:
             if m == self.size:
                 print()
                 m = 0
-        if (self.size == 0):
+        if self.size == 0:
             print()
