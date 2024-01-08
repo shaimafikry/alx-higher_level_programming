@@ -91,10 +91,11 @@ class Square:
 
     def my_print(self):
         """print the square to stdout
-
             Args: no args
         """
         if self.size == 0:
+            print()
+        if self.__position[0] > 0:
             print()
         for i in range(self.__size):
             if self.__position[1] == 0:
