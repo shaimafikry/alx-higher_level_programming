@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 """
-This module defines an empty class called Square.
+This module defines a class called Square.
 """
 
 
