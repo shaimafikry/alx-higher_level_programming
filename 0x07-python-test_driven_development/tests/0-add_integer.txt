@@ -6,3 +6,14 @@ test file
 >>> print(add_integer(6, "sccholl"))
 Traceback (most recent call last):
 TypeError: b must be an integer
+
+>>> print(add_integer(6))
+104
+
+>>> print(add_integer())
+Traceback (most recent call last):
+TypeError: add_integer() takes at least 1 argument (0 given)
+
+>>> print(add_integer("sccholl", 5))
+Traceback (most recent call last):
+TypeError: a must be an integer
