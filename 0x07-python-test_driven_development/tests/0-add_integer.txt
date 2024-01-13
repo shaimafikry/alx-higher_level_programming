@@ -1,18 +1,5 @@
->>> def add_integer(a, b=98):
-    """function to add two integers
-
-    Args:
-        a (int): 
-        b (int, optional):  Defaults to 98.
-    """
-
-    if not isinstance(a,(int, float)):
-        raise TypeError ("a must be an integer")
-    elif not isinstance(b,(int, float)):
-        raise TypeError ("b must be an integer")
-    else:
-        return a + b
-
+test file
+>>> from 0-add_integer import add_integer
 >>> print(add_integer(0, 98))
 98
 >>> print(add_integer(6, "sccholl"))
