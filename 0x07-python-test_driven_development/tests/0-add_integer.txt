@@ -1,5 +1,6 @@
 test file
->>> from 0-add_integer import add_integer
+>>> add_integer = __import__ ('0-add_integer').add_integer
+
 >>> print(add_integer(0, 98))
 98
 >>> print(add_integer(6, "sccholl"))
