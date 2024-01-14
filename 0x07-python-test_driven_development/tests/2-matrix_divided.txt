@@ -14,12 +14,12 @@ Traceback (most recent call last):
 TypeError: matrix must be a matrix (list of lists) of integers/floats
 
 #missing two arg
->>> print (matrix_divided())
+>>> print (matrix_divided()) #doctest: +NORMALIZE_WHITESPACE
 Traceback (most recent call last):
 TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
 
 #missing one arg
->>> print (matrix_divided([[7, 1, 5],[1, 2, 5]]))
+>>> print (matrix_divided([[7, 1, 5],[1, 2, 5]])) #doctest: +NORMALIZE_WHITESPACE
 Traceback (most recent call last):
 TypeError: matrix_divided() missing 1 required positional arguments:'div'
 
