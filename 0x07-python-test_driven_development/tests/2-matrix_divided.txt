@@ -3,6 +3,12 @@ test file
 >>> print (matrix_divided([[4, 8, 6],[8, 4, 2]], 2))
 [[2.0, 4.0, 3.0], [4.0, 2.0, 1.0]]
 
+
+>>> print (matrix_divided([[1, 2, 3], [4, 5, 6], [7, 8, 9]], float('inf')))
+[[0.0, 0.0, 0.0], [0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
+
+
+
 #putting non int of float value
 >>> print (matrix_divided([['p', 8, 6],[8, 4, 2]], 2))
 Traceback (most recent call last):
