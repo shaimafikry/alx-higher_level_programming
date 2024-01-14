@@ -21,11 +21,11 @@ TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' an
 #missing one arg
 >>> print (matrix_divided([[7, 1, 5],[1, 2, 5]]))
 Traceback (most recent call last):
-TypeError: matrix_divided() missing 1 required positional arguments: 'div'
+TypeError: matrix_divided() missing 1 required positional arguments:'div'
 
 >>> print (matrix_divided(,2))
 Traceback (most recent call last):
-TypeError: matrix_divided() missing 1 required positional arguments: 'matrix'
+TypeError: matrix_divided() missing 1 required positional arguments:'matrix'
 
 #div by string
 >>> print (matrix_divided([[1,2,3], [1, 2, 3]], 'op'))
