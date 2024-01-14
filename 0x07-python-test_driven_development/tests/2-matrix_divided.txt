@@ -16,12 +16,12 @@ TypeError: matrix must be a matrix (list of lists) of integers/floats
 #missing two arg
 >>> print (matrix_divided())
 Traceback (most recent call last):
-matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
+TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
 
 #missing one arg
 >>> print (matrix_divided([[7, 1, 5],[1, 2, 5]]))
 Traceback (most recent call last):
-TypeError: matrix_divided() takes exactly 2 arguments (1 given)
+TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
 
 #div by string
 >>> print (matrix_divided([[1,2,3], [1, 2, 3]], 'op'))
