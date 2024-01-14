@@ -13,6 +13,11 @@ TypeError: matrix must be a matrix (list of lists) of integers/floats
 Traceback (most recent call last):
 TypeError: matrix must be a matrix (list of lists) of integers/floats
 
+#div by string
+>>> print (matrix_divided([[1,2,3], [1, 2, 3]], 'op'))
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
 #division by zero
 >>> print (matrix_divided([[4, 8, 6],[8, 4, 2]], 0))
 Traceback (most recent call last):
