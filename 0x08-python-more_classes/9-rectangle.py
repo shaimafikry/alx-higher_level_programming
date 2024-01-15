@@ -102,18 +102,10 @@ class Rectangle:
 
     @classmethod
     def square(cls, size=0):
-        cls.width = size
-        cls.height = size
-        return cls
+        return cls(size, size)
 
     def __del__(self):
         """deleting message
         """
         Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
-
-
-
-my_square = Rectangle.square(5)
-print("Area: {} - Perimeter: {}".format(my_square.area(), my_square.perimeter()))
-print(my_square)
