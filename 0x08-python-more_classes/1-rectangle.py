@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""this module is for rectangle class 
+"""this module is for rectangle class
     """
 
 
@@ -8,13 +8,18 @@ class Rectangle:
     """
 
     def __init__(self, width=0, height=0):
-        """initiation 
+        """initiation
         Args:
             width: int >0
             height: int > 0
         """
-        self.__width = width
-        self.__height = height
+        if not isinstance(width, (int)) or not isinstance(height, (int)):
+            raise TypeError("width must be an integer")
+        elif width < 0 or height < 0:
+            raise ValueError("width must be >= 0")
+        else:
+            self.__width = width
+            self.__height = height
 
     @property
     def width(self):
