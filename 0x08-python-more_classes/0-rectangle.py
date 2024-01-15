@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""this module is for rectangle class 
+"""this module is for rectangle class
     """
 
 
