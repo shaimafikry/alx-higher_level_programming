@@ -6,13 +6,14 @@
 
 >>> text_indentation("this is a test:to rethink?anout.wba?")
 this is a test:
-<BLANK_LINE>
+<BLANKLINE>
 to rethink?
-<BLANK_LINE>
+<BLANKLINE>
 anout.
-<BLANK_LINE>
+<BLANKLINE>
 wba?
-<BLANK_LINE>
+<BLANKLINE>
+
 >>> text_indentation(5)
 Traceback (most recent call last):
 TypeError: text must be a string
