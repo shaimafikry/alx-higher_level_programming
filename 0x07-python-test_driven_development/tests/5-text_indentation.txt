@@ -1,0 +1,23 @@
+
+    """
+   doc file
+    """
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+>>> text_indentation("this is a test: to rethink? anout.wba?")
+this is a test:
+<BLANK_LINE>
+ to rethink?
+<BLANK_LINE>
+ anout.
+<BLANK_LINE>
+wba?
+<BLANK_LINE>
+
+>>> text_indentation(5)
+Traceback (most recent call last):
+TypeError: text must be a string
+
+>>> text_indentation()
+Traceback (most recent call last):
+TypeError: text_indentation() missing 1 required positional argument: 'text'
