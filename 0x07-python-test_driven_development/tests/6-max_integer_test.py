@@ -33,8 +33,8 @@ class TestMaxInteger(unittest.TestCase):
         self.assertEqual(max_integer(m), -2)
 
     def test_list_of_one_elemnt(self):
-        m = [6]
-        self.assertEqual(max_integer(m), 6)
+        m = max_integer([6])
+        self.assertEqual(m, 6)
 
 
 if __name__ == '__main__':
