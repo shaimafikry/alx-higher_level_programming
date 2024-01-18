@@ -5,6 +5,8 @@
 
 class Base:
     """the base class
+    Args:
+    __nb.objects: nm of obj
     """
 
     __nb_objects = 0
