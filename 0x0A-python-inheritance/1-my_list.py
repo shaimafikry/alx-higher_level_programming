@@ -8,5 +8,5 @@ class MyList (list):
         list (_class_): base class
     """
     def print_sorted(self):
-        self.m = sorted()
+        self.m = sorted(self)
         print (self.m)
