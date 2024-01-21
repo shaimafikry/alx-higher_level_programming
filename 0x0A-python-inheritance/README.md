@@ -1,0 +1,1 @@
+soulution for iheritance
