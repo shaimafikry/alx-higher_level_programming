@@ -1,7 +1,9 @@
 #!/usr/bin/python3
 """my list class
     """
-class MyList (list):
+
+
+class MyList(list):
     """class mylist inherits from list class
 
     Args:
@@ -9,4 +11,4 @@ class MyList (list):
     """
     def print_sorted(self):
         self.m = sorted(self)
-        print (self.m)
+        print(self.m)
