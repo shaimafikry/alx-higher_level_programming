@@ -11,3 +11,10 @@
 []
 >>> print (m)
 []
+>>> m = MyList ()
+>>> m.append(-2)
+>>> m.append (-1)
+>>> m.print_sorted()
+[-1, -2]
+>>> print (m)
+[-2, -1]
