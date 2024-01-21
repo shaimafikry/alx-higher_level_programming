@@ -6,3 +6,8 @@
 [2, 4]
 >>> print (m)
 [4, 2]
+>>> m = MyList ()
+>>> m.print_sorted()
+[]
+>>> print (m)
+[]
