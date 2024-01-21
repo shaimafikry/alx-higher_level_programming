@@ -1,7 +1,7 @@
 >>> MyList = __import__('1-my_list').MyList
 >>> m = MyList ()
->>> m.appened(4)
->>> m.appened (2)
+>>> m.append(4)
+>>> m.append (2)
 >>> m.print_sorted()
 [2, 4]
 >>> print (m)
