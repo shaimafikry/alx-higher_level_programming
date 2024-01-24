@@ -12,4 +12,4 @@ def load_from_json_file(filename):
         filename: to put into
     """
     with open(filename, "r", encoding="utf-8") as f_new:
-        my_obj = json.load(f_new)
+        return json.load(f_new)
