@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""rectangle class iherts from geometry
+"""square class iherts from geometry
 
     """
 Rectangle = __import__('9-rectangle.py').Rectangle
