@@ -15,5 +15,6 @@ def save_to_json_file(my_obj, filename):
     if os.path.exists(filename):
         with open(filename, "a", encoding="utf-8") as f_new:
             json.dump(my_obj, f_new)
-    with open(filename, "w", encoding="utf-8") as f_new:
+    else:
+        with open(filename, "w", encoding="utf-8") as f_new:
             json.dump(my_obj, f_new)
