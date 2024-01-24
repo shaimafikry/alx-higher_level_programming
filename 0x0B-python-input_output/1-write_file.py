@@ -10,4 +10,8 @@ def write_file(filename="", text=""):
         filename (str, optional): Defaults to "".
     """
     with open(filename, "w", encoding="utf-8") as fe:
-        fe.write(text)
+        num = fe.write(text)
+    return num
+
+nb_characters = write_file("my_first_file.txt", "This School is so cool!\n")
+print(nb_characters)
