@@ -5,7 +5,7 @@ import json
 
 
 def save_to_json_file(my_obj, filename):
-    """convert from json to string
+    """convert string to json in a file
 
     Args:
         my_obj (string): to be converted
