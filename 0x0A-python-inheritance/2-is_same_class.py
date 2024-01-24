@@ -4,7 +4,7 @@
 
 
 def is_same_class(obj, a_class):
-    """check if the object is instance
+    """check if the object is same type
         return true or false
     Args:
         obj (instance): ogj checked
