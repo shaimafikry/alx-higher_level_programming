@@ -4,7 +4,7 @@
 
 
 def write_file(filename="", text=""):
-    """open a file and read it and print it to stdout
+    """open a file and write to it
 
     Args:
         filename (str, optional): Defaults to "".
