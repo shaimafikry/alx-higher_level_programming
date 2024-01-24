@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """square class iherts from rectangle
+
     """
 Rectangle = __import__('9-rectangle.py').Rectangle
 
