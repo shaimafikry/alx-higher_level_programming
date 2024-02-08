@@ -25,4 +25,4 @@ class Student:
             json (_type_): _description_
         """
         for k, v in json.items():
-            setattr(self, k , v)
+            setattr(self, k, v)
