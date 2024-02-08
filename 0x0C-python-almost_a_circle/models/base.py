@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""module for the base class 
+"""module for the base class
     """
 
 
@@ -15,9 +15,9 @@ class Base:
         """constrcutor
 
         Args:
-            id (_type_, int): _takes id and assign it to the objecct_. Defaults to None.
+        id (int): _takes id and assign it to the objecct_. Defaults to None.
         """
-        if id != None:
+        if id is not None:
             self.id = id
         else:
             Base.__nb_objects += 1
