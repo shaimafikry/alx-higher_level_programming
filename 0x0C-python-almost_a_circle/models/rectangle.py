@@ -51,7 +51,12 @@ def y(self, value):
 
 
 def get_x(self):
+    """x getter
+    """
     return self.__x
 
+
 def set_x(self, x):
+    """ x setter
+    """
     self.__x = x
