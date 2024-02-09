@@ -5,6 +5,7 @@
 
 from .rectangle import Rectangle
 
+
 class Square(Rectangle):
     """class square iherts from rectangle"""
 
