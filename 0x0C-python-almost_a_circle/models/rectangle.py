@@ -112,4 +112,7 @@ class Rectangle(Base):
 
     def to_dictionary(self):
         """returns dict of attribute"""
-        return json.dumps(Rectangle())
+        dic = {"id" : "", "width": "", "height": "", "x": "", "y": ""}
+        for k in dic:
+            dic[k] = getattr(self, k)
+        return dic
