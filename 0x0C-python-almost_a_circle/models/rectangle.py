@@ -42,6 +42,7 @@ def height(self, value):
 
 @property
 def y(self):
+    """Set/get the y coordinate of the Rectangle."""
     return self.__y
 
 
