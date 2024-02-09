@@ -23,7 +23,7 @@ class Rectangle(Base):
             y (int): Defaults to 0.
             id (int): Defaults to None.
         """
-        Base.__init__(self, id)
+        super().__init__(id)
         self.width = width
         self.height = height
         self.x = x
