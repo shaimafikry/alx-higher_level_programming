@@ -108,6 +108,7 @@ class Rectangle(Base):
             attrs = ("id", "width", "height", "x", "y")
             for a, i in zip(attrs, args):
                 setattr(self, a, i)
+
     def to_dictionary(self):
         """returns dict of attribute"""
         return json.dumps(Rectangle())
