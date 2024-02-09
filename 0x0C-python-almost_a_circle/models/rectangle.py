@@ -89,7 +89,7 @@ class Rectangle(Base):
     def display(self):
         """represent rectangle in #"""
         if (self.y > 0):
-            for i in range (self.y):
+            for i in range(self.y):
                 print()
         for i in range(self.height):
             print(" " * self.x, end="")
