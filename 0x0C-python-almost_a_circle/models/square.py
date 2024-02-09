@@ -38,3 +38,10 @@ class Square(Rectangle):
             attrs = ("id", "size", "x", "y")
             for a, i in zip(attrs, args):
                 setattr(self, a, i)
+
+    def to_dictionary(self):
+        """returns dict of attribute"""
+        dic = {"id": "", "size": "", "x": "", "y": ""}
+        for k in dic:
+            dic[k] = getattr(self, k)
+        return dic

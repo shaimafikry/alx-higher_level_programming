@@ -112,7 +112,7 @@ class Rectangle(Base):
 
     def to_dictionary(self):
         """returns dict of attribute"""
-        dic = {"id" : "", "width": "", "height": "", "x": "", "y": ""}
+        dic = {"id": "", "width": "", "height": "", "x": "", "y": ""}
         for k in dic:
             dic[k] = getattr(self, k)
         return dic
