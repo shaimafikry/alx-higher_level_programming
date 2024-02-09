@@ -50,10 +50,8 @@ def y(self, value):
     self.__y = value
 
 
-@property
-def x(self):
+def get_x(self):
     return self.__x
 
-@x.setter
-def x(self, value):
-    self.__x = value
+def set_x(self, x):
+    self.__x = x
