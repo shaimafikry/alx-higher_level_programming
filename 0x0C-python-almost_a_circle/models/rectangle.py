@@ -20,14 +20,16 @@ class Rectangle(Base):
         self.__y = y
 
 
-@property
-def width(self):
+def get_width(self):
+    """width getter
+    """
     return self.__width
 
 
-@width.setter
-def width(self, value):
-    self.__width = value
+def set_width(self, width):
+    """width setter
+    """
+    self.__width = width
 
 
 @property
