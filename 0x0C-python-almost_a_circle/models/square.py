@@ -26,8 +26,7 @@ class Square(Rectangle):
             self.width = value
 
     def __str__(self):
-        return "[Square] ({}) {}/{} - {}".format(
-            self.id, self.x, self.y, self.width)
+        return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y, self.width)
 
     def update(self, *args, **kwargs):
         """assign values to attr"""

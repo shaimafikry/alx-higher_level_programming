@@ -88,7 +88,7 @@ class Rectangle(Base):
 
     def display(self):
         """represent rectangle in #"""
-        if (self.y > 0):
+        if self.y > 0:
             for i in range(self.y):
                 print()
         for i in range(self.height):
@@ -97,7 +97,8 @@ class Rectangle(Base):
 
     def __str__(self):
         return "[Rectangle] ({}) {}/{} - {}/{}".format(
-            self.id, self.x, self.y, self.width, self.height)
+            self.id, self.x, self.y, self.width, self.height
+        )
 
     def update(self, *args, **kwargs):
         """assign values to attr"""
