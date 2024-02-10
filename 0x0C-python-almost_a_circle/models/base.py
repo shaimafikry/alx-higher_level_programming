@@ -63,7 +63,10 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """returns an instance with all attribue set"""
-        dummy = cls(1, 1)
+        if cls.__name__ == "Square":
+            dummy = cls(1)
+        else:
+            dummy = cls(1, 1)
         dummy.update(**dictionary)
         return dummy
 
