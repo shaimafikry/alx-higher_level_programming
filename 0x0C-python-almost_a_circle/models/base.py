@@ -63,8 +63,7 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """returns an instance with all attribue set"""
-        dummy = cls(1, 1)
-        dummy.update(**dictionary)
+        dummy = cls.update(**dictionary)
         return dummy
 
     @classmethod
