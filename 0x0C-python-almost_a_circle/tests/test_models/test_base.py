@@ -4,17 +4,23 @@ from models.base import Base
 
 
 class TestBase(unittest.TestCase):
-    def test_id_none(self):
-        b1 = Base()
-        self.assertEqual(b1.id, 1)
+    def setUp(self):
+        self.base = Base()
 
-    def test_id2_none(self):
-        b2 = Base()
-        self.assertEqual(b2.id, 2)
+    def test_id_none(self):
+        self.assertEqual(self.base.id, 3)
 
     def test_id_value(self):
-        b3 = Base(5)
-        self.assertEqual(b3.id, 5)
+        b = Base(5)
+        self.assertEqual(b.id, 5)
+
+    def test_to_json_string(self):
+        b = [{"id": 6, "size": 7}]
+        self.assertEqual(Base.to_json_string(b), '[{"id": 6, "size": 7}]')
+
+    def test_from_json_string(self):
+        b = '{"id": 5, "size": 6}'
+        self.assertEqual(Base.from_json_string(b), {"id": 5, "size": 6})
 
 
 if __name__ == "__main__":

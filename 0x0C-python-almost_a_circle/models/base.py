@@ -62,7 +62,7 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        """returns an instance with all attribue set"""
+        """ takes dict returns an instance with all attribue set"""
         if cls.__name__ == "Square":
             dummy = cls(1)
         else:
