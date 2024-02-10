@@ -76,7 +76,7 @@ class Base:
                 """ inst hold list of dictionaries"""
                 inst_dict = cls.from_json_string(fe.read())
                 """list_inst hold list of instances after create"""
-                inst_list= []
+                inst_list = []
                 for i in inst_dict:
                     inst_list.append(cls.create(**i))
                 return inst_list
