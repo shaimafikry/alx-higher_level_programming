@@ -42,3 +42,8 @@ class Base:
         filename = cls.__name__+".json"
         with open(filename, "w", encoding="utf-8") as fe:
             fe.write(list_objs_dict)
+
+    @staticmethod
+    def from_json_string(json_string):
+        "reload from json string"
+        
