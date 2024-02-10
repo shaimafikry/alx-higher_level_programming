@@ -39,8 +39,11 @@ class Base:
         """save data o file"""
         """turns list of objects to dictionaries"""
         lst_dict = []
-        for i in list_objs:
-            lst_dict.append(i.to_dictionary())
+        if list_objs is None:
+            lst_dict = []
+        else:
+            for i in list_objs:
+                lst_dict.append(i.to_dictionary())
         list_objs_dict = cls.to_json_string(lst_dict)
         filename = str(cls.__name__) + ".json"
         with open(filename, "w", encoding="utf-8") as fe:
