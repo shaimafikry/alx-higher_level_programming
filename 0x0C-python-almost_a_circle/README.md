@@ -1,5 +1,5 @@
-SOLUTION OF 
 0x0C. Python - Almost a circle
 
 
-using unit test for eery models
+https://github.com/shaimafikry/alx-higher_level_programming/assets/41205343/d00d7479-86c2-4f57-94d7-2367352eb360
+
