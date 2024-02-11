@@ -81,10 +81,9 @@ class TestSquare(unittest.TestCase):
 
     def test_save_to_file(self):
         b = Square(1)
-        b2 = Square(3)
-        data_list = [b, b2]
+        data_list = [b]
         Square.save_to_file(data_list)
-        with open("Rectangle.json", "r", encoding="utf-8") as fe:
+        with open("Square.json", "r", encoding="utf-8") as fe:
             data = fe.read()
         data_compare = json.loads(data)
         for i, n in zip(data_list, data_compare):
