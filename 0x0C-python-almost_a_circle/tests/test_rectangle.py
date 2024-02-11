@@ -14,6 +14,14 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(self.rectangle.y, 5)
         self.assertEqual(self.rectangle.id, 6)
 
+
+    def test_init_(self):
+        b = Rectangle(1, 2)
+        self.assertEqual(b.width, 1)
+        self.assertEqual(b.height, 2)
+        self.assertEqual(b.x, 0)
+        self.assertEqual(b.y, 0)
+
     def test_area(self):
         self.assertEqual(self.rectangle.area(), 1)
 
