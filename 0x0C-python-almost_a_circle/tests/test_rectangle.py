@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 import unittest
 from models.rectangle import Rectangle
+import io
+import sys
 
 
 class TestRectangle(unittest.TestCase):
@@ -19,7 +21,7 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(b.height, 2)
 
         with self.assertRaises(TypeError):
-            b = Rectangle("1",  2)
+            b = Rectangle("1", 2)
 
         b = Rectangle(1, 2, 3)
         self.assertEqual(b.width, 1)
@@ -43,6 +45,45 @@ class TestRectangle(unittest.TestCase):
 
         with self.assertRaises(ValueError):
             b = Rectangle(-1, 2)
+
+        with self.assertRaises(ValueError):
+            b = Rectangle(1, -2)
+
+        with self.assertRaises(ValueError):
+            b = Rectangle(0, 2)
+
+        with self.assertRaises(ValueError):
+            b = Rectangle(1, 2, -3)
+
+        with self.assertRaises(ValueError):
+            b = Rectangle(1, 2, 3, -4)
+
+    def test_display(self):
+        captured_output = io.StringIO()  # Capture the standard output
+        sys.stdout = captured_output
+        rect = Rectangle(3, 4)  # Replace with the actual constructor parameters
+        rect.display()
+        sys.stdout = sys.__stdout__  # Restore the standard output
+        output = captured_output.getvalue()  # Retrieve the captured output
+        exp_result = "###\n###\n###\n###\n"
+        self.assertEqual(output, exp_result)
+        captured_output = io.StringIO()  # Capture the standard output
+        sys.stdout = captured_output
+        rect = Rectangle(1, 2, 3)  # Replace with the actual constructor parameters
+        rect.display()
+        sys.stdout = sys.__stdout__  # Restore the standard output
+        output = captured_output.getvalue()  # Retrieve the captured output
+        exp_result = "   #\n   #\n"
+        self.assertEqual(output, exp_result)
+
+        capturd_output = io.StringIO()
+        sys.stdout = capturd_output
+        b = Rectangle(1, 2, 3, 4)
+        b.display()
+        sys.stdout = sys.__stdout__
+        output = capturd_output.getvalue()
+        exp_result = "\n\n\n\n   #\n   #\n"
+        self.assertEqual(output, exp_result)
 
     def test_area(self):
         self.assertEqual(self.rectangle.area(), 1)
