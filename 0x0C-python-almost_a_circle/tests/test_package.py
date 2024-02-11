@@ -39,7 +39,7 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(self.rectangle.id, 6)
 
 
-    def test_init_(self):
+    def test_init_more(self):
         b = Rectangle(1, 2)
         self.assertEqual(b.width, 1)
         self.assertEqual(b.height, 2)
