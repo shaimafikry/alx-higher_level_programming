@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 import unittest
 from models.rectangle import Rectangle
-from models.base import Base
 import json
 import io
 import sys
@@ -123,32 +122,33 @@ class TestRectangle(unittest.TestCase):
         self.assertIsInstance(inst, Rectangle)
 
     def test_save_to_file(self):
-        b = Rectangle (1, 2)
-        b2 = Rectangle (3, 4)
-        data_list = [b , b2]
+        b = Rectangle(1, 2)
+        b2 = Rectangle(3, 4)
+        data_list = [b, b2]
         Rectangle.save_to_file(data_list)
-        with open ("Rectangle.json", "r", encoding="utf-8") as fe:
+        with open("Rectangle.json", "r", encoding="utf-8") as fe:
             data = fe.read()
         data_compare = json.loads(data)
-        for i , n  in zip(data_list, data_compare):
-            self.assertEqual (i.to_dictionary(), n)
+        for i, n in zip(data_list, data_compare):
+            self.assertEqual(i.to_dictionary(), n)
 
         Rectangle.save_to_file(None)
-        with open ("Rectangle.json", "r", encoding="utf-8") as fe:
+        with open("Rectangle.json", "r", encoding="utf-8") as fe:
             data = fe.read()
         data_compare = json.loads(data)
-        for i , n  in zip(data_list, data_compare):
-            self.assertEqual (i.to_dictionary(), n)
+        for i, n in zip(data_list, data_compare):
+            self.assertEqual(i.to_dictionary(), n)
 
         Rectangle.save_to_file([])
-        with open ("Rectangle.json", "r", encoding="utf-8") as fe:
+        with open("Rectangle.json", "r", encoding="utf-8") as fe:
             data = fe.read()
         data_compare = json.loads(data)
-        for i , n  in zip(data_list, data_compare):
-            self.assertEqual (i.to_dictionary(), n)
+        for i, n in zip(data_list, data_compare):
+            self.assertEqual(i.to_dictionary(), n)
 
     def test_load_from_file(self):
-         pass
+        pass
+
 
 if __name__ == "__main__":
     unittest.main()
