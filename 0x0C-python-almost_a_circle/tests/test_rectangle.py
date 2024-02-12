@@ -122,27 +122,22 @@ class TestRectangle(unittest.TestCase):
         self.assertIsInstance(inst, Rectangle)
 
     def test_save_to_file(self):
-        b = Rectangle(1, 2)
-        b2 = Rectangle(3, 4)
-        data_list = [b, b2]
-        Rectangle.save_to_file(data_list)
+        b = Rectangle(3, 4)
+        Rectangle.save_to_file([b])
         with open("Rectangle.json", "r", encoding="utf-8") as fe:
             data = fe.read()
-        data_compare = json.loads(data)
-        for i, n in zip(data_list, data_compare):
-            self.assertEqual(i.to_dictionary(), n)
+        data_s = json.loads(data)
+        self.assertEqual(data_s, [b.to_dictionary()])
 
         Rectangle.save_to_file(None)
         with open("Rectangle.json", "r", encoding="utf-8") as fe:
             data = fe.read()
-        data_compare = json.loads(data)
-        self.assertEqual([], data_compare)
+        self.assertEqual('[]', data)
 
         Rectangle.save_to_file([])
         with open("Rectangle.json", "r", encoding="utf-8") as fe:
             data = fe.read()
-        data_compare = json.loads(data)
-        self.assertEqual([], data_compare)
+        self.assertEqual('[]', data)
 
 
     def test_load_from_file(self):

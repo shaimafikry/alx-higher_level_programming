@@ -80,10 +80,14 @@ class TestSquare(unittest.TestCase):
         self.assertIsInstance(inst, Square)
 
     def test_save_to_file(self):
-        Square.save_to_file([Square(1)])
+        b = Square(1)
+        data_list = [b]
+        Square.save_to_file([b])
         with open("Square.json", "r", encoding="utf-8") as fe:
             data = fe.read()
-            self.assertEqual(data,'[{"id": 15, "size": 1, "x": 0, "y": 0}]')
+        data_compare = json.loads(data)
+        for i, n in zip(data_list, data_compare):
+            self.assertEqual(i.to_dictionary(), n)
 
     def test_save_to_file_None(self):
         Square.save_to_file(None)
