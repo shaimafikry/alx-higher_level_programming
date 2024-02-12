@@ -79,6 +79,12 @@ class TestSquare(unittest.TestCase):
         inst = Square.create(**m)
         self.assertIsInstance(inst, Square)
 
+    def test_save_to_file_empty_list(self):
+        Square.save_to_file([])
+        with open("Square.json", "r", encoding="utf-8") as fe:
+            data = fe.read()
+        self.assertEqual(data, '[]')
+
     def test_save_to_file(self):
         b = Square(1)
         data_list = [b]
@@ -94,12 +100,6 @@ class TestSquare(unittest.TestCase):
             data = fe.read()
         data_compare = json.loads(data)
         self.assertEqual([], data_compare)
-
-    def test_save_to_file_empty_list(self):
-        Square.save_to_file([])
-        with open("Square.json", "r", encoding="utf-8") as fe:
-            data = fe.read()
-        self.assertEqual(data, '[]')
 
     def test_load_from_file(self):
         list_inst = Square.load_from_file()
