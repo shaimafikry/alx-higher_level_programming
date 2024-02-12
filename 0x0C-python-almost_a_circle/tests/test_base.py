@@ -13,8 +13,7 @@ class TestBase(unittest.TestCase):
         self.assertEqual(b.id, 5)
 
     def test_to_json_string_1(self):
-        b = [{"id": 6}]
-        self.assertEqual(Base.to_json_string(b), '[{"id": 6}]')
+        self.assertEqual(Base.to_json_string([{"id": 6}]), '[{"id": 6}]')
 
     def test_to_json_string(self):
         b = [{"id": 6, "size": 7}]
