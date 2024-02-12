@@ -1,17 +1,53 @@
 #!/usr/bin/python3
 import unittest
 from models.square import Square
+import json
+import io
+import sys
 
 
-class TestRectangle(unittest.TestCase):
+class TestSquare(unittest.TestCase):
     def setUp(self):
         self.square = Square(1, 5, 5, 6)
 
     def test_init(self):
-        self.assertEqual(self.square.size, 1)
+        self.assertEqual(self.square.width, 1)
         self.assertEqual(self.square.x, 5)
         self.assertEqual(self.square.y, 5)
         self.assertEqual(self.square.id, 6)
+
+        b = Square(1)
+        self.assertEqual(b.size, 1)
+
+        with self.assertRaises(TypeError):
+            b = Square("1")
+
+        b = Square(1, 3)
+        self.assertEqual(b.size, 1)
+        self.assertEqual(b.x, 3)
+
+        b = Square(1, 3, 4)
+        self.assertEqual(b.size, 1)
+        self.assertEqual(b.x, 3)
+        self.assertEqual(b.y, 4)
+
+        with self.assertRaises(TypeError):
+            b = Square(1, "2")
+
+        with self.assertRaises(TypeError):
+            b = Square(1, 2, "4")
+
+        with self.assertRaises(ValueError):
+            b = Square(-1)
+
+        with self.assertRaises(ValueError):
+            b = Square(1, -2)
+
+        with self.assertRaises(ValueError):
+            b = Square(0)
+
+        with self.assertRaises(ValueError):
+            b = Square(1, 2, -3)
 
     def test_area(self):
         self.assertEqual(self.square.area(), 1)
@@ -37,6 +73,44 @@ class TestRectangle(unittest.TestCase):
     def test_to_dictionary(self):
         result = self.square.to_dictionary()
         self.assertEqual(result, {"id": 6, "size": 1, "x": 5, "y": 5})
+
+    def test_create(self):
+        m = {"size": 10}
+        inst = Square.create(**m)
+        self.assertIsInstance(inst, Square)
+
+    def test_save_to_file(self):
+        b = Square(1)
+        data_list = [b]
+        Square.save_to_file(data_list)
+        with open("Square.json", "r", encoding="utf-8") as fe:
+            data = fe.read()
+        data_compare = json.loads(data)
+        for i, n in zip(data_list, data_compare):
+            self.assertEqual(i.to_dictionary(), n)
+
+        Square.save_to_file(None)
+        with open("Square.json", "r", encoding="utf-8") as fe:
+            data = fe.read()
+        data_compare = json.loads(data)
+        for i, n in zip(data_list, data_compare):
+            self.assertEqual(i.to_dictionary(), n)
+
+        Square.save_to_file([])
+        with open("Square.json", "r", encoding="utf-8") as fe:
+            data = fe.read()
+        data_compare = json.loads(data)
+        for i, n in zip(data_list, data_compare):
+            self.assertEqual(i.to_dictionary(), n)
+
+    def test_load_from_file(self):
+        list_inst = Square.load_from_file()
+        for i in list_inst:
+            self.assertIsInstance(i, Square)
+
+    def test_load_from_file_not_exist(self):
+        list_inst = Square.load_from_file()
+        self.assertEqual(list_inst, [])
 
 
 if __name__ == "__main__":

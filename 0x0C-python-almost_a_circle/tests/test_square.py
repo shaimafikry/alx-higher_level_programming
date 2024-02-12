@@ -104,9 +104,13 @@ class TestSquare(unittest.TestCase):
             self.assertEqual(i.to_dictionary(), n)
 
     def test_load_from_file(self):
-        list_inst = Square.load_from_file ()
+        list_inst = Square.load_from_file()
         for i in list_inst:
             self.assertIsInstance(i, Square)
+
+    def test_load_from_file_not_exist(self):
+        list_inst = Square.load_from_file()
+        self.assertEqual(list_inst, [])
 
 
 if __name__ == "__main__":

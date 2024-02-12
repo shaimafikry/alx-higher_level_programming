@@ -147,7 +147,13 @@ class TestRectangle(unittest.TestCase):
             self.assertEqual(i.to_dictionary(), n)
 
     def test_load_from_file(self):
-        pass
+        list_inst = Rectangle.load_from_file()
+        for i in list_inst:
+            self.assertIsInstance(i, Rectangle)
+
+    def test_load_from_file_not_exist(self):
+        list_inst = Rectangle.load_from_file()
+        self.assertEqual(list_inst, [])
 
 
 if __name__ == "__main__":

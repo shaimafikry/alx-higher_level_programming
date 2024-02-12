@@ -1,6 +1,9 @@
 #!/usr/bin/python3
 import unittest
 from models.rectangle import Rectangle
+import json
+import io
+import sys
 
 
 class TestRectangle(unittest.TestCase):
@@ -13,6 +16,78 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(self.rectangle.x, 5)
         self.assertEqual(self.rectangle.y, 5)
         self.assertEqual(self.rectangle.id, 6)
+
+        b = Rectangle(1, 2)
+        self.assertEqual(b.width, 1)
+        self.assertEqual(b.height, 2)
+
+        with self.assertRaises(TypeError):
+            b = Rectangle("1", 2)
+
+        b = Rectangle(1, 2, 3)
+        self.assertEqual(b.width, 1)
+        self.assertEqual(b.height, 2)
+        self.assertEqual(b.x, 3)
+
+        b = Rectangle(1, 2, 3, 4)
+        self.assertEqual(b.width, 1)
+        self.assertEqual(b.height, 2)
+        self.assertEqual(b.x, 3)
+        self.assertEqual(b.y, 4)
+
+        with self.assertRaises(TypeError):
+            b = Rectangle(1, 2, "3")
+
+        with self.assertRaises(TypeError):
+            b = Rectangle(1, "2")
+
+        with self.assertRaises(TypeError):
+            b = Rectangle(1, 2, 3, "4")
+
+        with self.assertRaises(ValueError):
+            b = Rectangle(-1, 2)
+
+        with self.assertRaises(ValueError):
+            b = Rectangle(1, 0)
+
+        with self.assertRaises(ValueError):
+            b = Rectangle(1, -2)
+
+        with self.assertRaises(ValueError):
+            b = Rectangle(0, 2)
+
+        with self.assertRaises(ValueError):
+            b = Rectangle(1, 2, -3)
+
+        with self.assertRaises(ValueError):
+            b = Rectangle(1, 2, 3, -4)
+
+    def test_display(self):
+        captured_output = io.StringIO()  # Capture the standard output
+        sys.stdout = captured_output
+        rect = Rectangle(3, 4)  # Replace with the actual constructor parameters
+        rect.display()
+        sys.stdout = sys.__stdout__  # Restore the standard output
+        output = captured_output.getvalue()  # Retrieve the captured output
+        exp_result = "###\n###\n###\n###\n"
+        self.assertEqual(output, exp_result)
+        captured_output = io.StringIO()  # Capture the standard output
+        sys.stdout = captured_output
+        rect = Rectangle(1, 2, 3)  # Replace with the actual constructor parameters
+        rect.display()
+        sys.stdout = sys.__stdout__  # Restore the standard output
+        output = captured_output.getvalue()  # Retrieve the captured output
+        exp_result = "   #\n   #\n"
+        self.assertEqual(output, exp_result)
+
+        capturd_output = io.StringIO()
+        sys.stdout = capturd_output
+        b = Rectangle(1, 2, 3, 4)
+        b.display()
+        sys.stdout = sys.__stdout__
+        output = capturd_output.getvalue()
+        exp_result = "\n\n\n\n   #\n   #\n"
+        self.assertEqual(output, exp_result)
 
     def test_area(self):
         self.assertEqual(self.rectangle.area(), 1)
@@ -45,6 +120,40 @@ class TestRectangle(unittest.TestCase):
         m = {"height": 4, "width": 10}
         inst = Rectangle.create(**m)
         self.assertIsInstance(inst, Rectangle)
+
+    def test_save_to_file(self):
+        b = Rectangle(1, 2)
+        b2 = Rectangle(3, 4)
+        data_list = [b, b2]
+        Rectangle.save_to_file(data_list)
+        with open("Rectangle.json", "r", encoding="utf-8") as fe:
+            data = fe.read()
+        data_compare = json.loads(data)
+        for i, n in zip(data_list, data_compare):
+            self.assertEqual(i.to_dictionary(), n)
+
+        Rectangle.save_to_file(None)
+        with open("Rectangle.json", "r", encoding="utf-8") as fe:
+            data = fe.read()
+        data_compare = json.loads(data)
+        for i, n in zip(data_list, data_compare):
+            self.assertEqual(i.to_dictionary(), n)
+
+        Rectangle.save_to_file([])
+        with open("Rectangle.json", "r", encoding="utf-8") as fe:
+            data = fe.read()
+        data_compare = json.loads(data)
+        for i, n in zip(data_list, data_compare):
+            self.assertEqual(i.to_dictionary(), n)
+
+    def test_load_from_file(self):
+        list_inst = Rectangle.load_from_file()
+        for i in list_inst:
+            self.assertIsInstance(i, Rectangle)
+
+    def test_load_from_file_not_exist(self):
+        list_inst = Rectangle.load_from_file()
+        self.assertEqual(list_inst, [])
 
 
 if __name__ == "__main__":
