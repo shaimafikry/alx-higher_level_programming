@@ -136,15 +136,14 @@ class TestRectangle(unittest.TestCase):
         with open("Rectangle.json", "r", encoding="utf-8") as fe:
             data = fe.read()
         data_compare = json.loads(data)
-        for i, n in zip(data_list, data_compare):
-            self.assertEqual(i.to_dictionary(), n)
+        self.assertEqual([], data_compare)
 
         Rectangle.save_to_file([])
         with open("Rectangle.json", "r", encoding="utf-8") as fe:
             data = fe.read()
         data_compare = json.loads(data)
-        for i, n in zip(data_list, data_compare):
-            self.assertEqual(i.to_dictionary(), n)
+        self.assertEqual([], data_compare)
+
 
     def test_load_from_file(self):
         list_inst = Rectangle.load_from_file()

@@ -89,17 +89,19 @@ class TestSquare(unittest.TestCase):
         for i, n in zip(data_list, data_compare):
             self.assertEqual(i.to_dictionary(), n)
 
+    def test_save_to_file_None(self):
         Square.save_to_file(None)
         with open("Square.json", "r", encoding="utf-8") as fe:
             data = fe.read()
         data_compare = json.loads(data)
         self.assertEqual([], data_compare)
 
+    def test_save_to_file_empty_list(self):
         Square.save_to_file([])
         with open("Square.json", "r", encoding="utf-8") as fe:
             data = fe.read()
-        data_compare = json.loads(data)
-        self.assertEqual([], data_compare)
+        # data_compare = json.loads(data)
+        self.assertEqual(data, '[]')
 
     def test_load_from_file(self):
         list_inst = Square.load_from_file()
