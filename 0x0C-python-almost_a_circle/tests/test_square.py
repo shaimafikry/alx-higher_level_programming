@@ -83,7 +83,8 @@ class TestSquare(unittest.TestCase):
         Square.save_to_file([])
         with open("Square.json", "r", encoding="utf-8") as fe:
             data = fe.read()
-        self.assertEqual(data, '[]')
+        data_compare = json.loads(data)
+        self.assertEqual([], data_compare)
 
     def test_save_to_file(self):
         b = Square(1)
