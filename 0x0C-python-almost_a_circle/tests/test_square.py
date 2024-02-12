@@ -88,7 +88,6 @@ class TestSquare(unittest.TestCase):
 
     def test_save_to_file(self):
         b = Square(1)
-        data_list = [b]
         Square.save_to_file([b])
         with open("Square.json", "r", encoding="utf-8") as fe:
             data = fe.read()

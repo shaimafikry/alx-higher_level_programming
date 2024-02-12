@@ -128,13 +128,13 @@ class TestRectangle(unittest.TestCase):
             data = fe.read()
         data_s = json.loads(data)
         self.assertEqual(data_s, [b.to_dictionary()])
-
-        Rectangle.save_to_file(None)
+        b = Rectangle(1, 1)
+        b.save_to_file(None)
         with open("Rectangle.json", "r", encoding="utf-8") as fe:
             data = fe.read()
         self.assertEqual('[]', data)
-
-        Rectangle.save_to_file([])
+        b = Rectangle(1, 1)
+        b.save_to_file([])
         with open("Rectangle.json", "r", encoding="utf-8") as fe:
             data = fe.read()
         self.assertEqual('[]', data)
