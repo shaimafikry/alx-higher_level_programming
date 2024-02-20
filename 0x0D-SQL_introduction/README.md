@@ -1,2 +1,13 @@
 SQL
 Structured query language (SQL) is a programming language for storing and processing information in a relational database. A relational database stores information in tabular form, with rows and columns representing different data attributes and the various relationships between the data values.
+
+HOW to comment in SQL:
+-- comment
+"there is a space between -- and  comment"
+
+NOTES:
+* names of tables and columns and rows are written without ("")
+* there is a "," to sepreate more than 1 column
+* data type of every columns is written directly next to it without any additional data
+	ex :  id INT (column name id of type INT) -->> CHECK (4-first_table.sql)
+* we can use if conditoin in sql -->> CHECK (1-create_database_if_missing.sql, 2-remove_database.sql)
