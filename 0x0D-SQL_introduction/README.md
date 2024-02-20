@@ -10,7 +10,7 @@ NOTES:
 * there is a "," to sepreate more than 1 column
 * data type of every columns is written directly next to it without any additional data
 	ex :  id INT (column name id of type INT) -->> CHECK (4-first_table.sql)
-* we can use if conditoin in sql -->> CHECK (1-create_database_if_missing.sql, 2-remove_database.sql)
+* we can use if conditoin in sql -->> CHECK (1-create_database_if_missing.sql, 2-remove_database.sql, 9-full_creation.sql)
 * to show decription of how u created a table you can use -->> CHECK (5-full_table.sql)
 * to get into a specific database you may use (USE database_name)
 * to show fields ( columns) from a table use :
@@ -18,5 +18,5 @@ NOTES:
 	2- SHOW COLUMNS FROM table_name
 	3- SHOW FIELDS FROM table_name
 * to show rows you use (select)-->> CHECK (6-list_values.sql)
-* to add a new row -->> CHECK (7-insert_value.sql)
-* 
+* to add a new row -->> CHECK (7-insert_value.sql, 9-full_creation.sql)
+*  to know the count of rows -->> CHECK (8-count_89.sql)
