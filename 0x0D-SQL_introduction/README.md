@@ -13,3 +13,8 @@ NOTES:
 * we can use if conditoin in sql -->> CHECK (1-create_database_if_missing.sql, 2-remove_database.sql)
 * to show decription of how u created a table you can use -->> CHECK (5-full_table.sql)
 * to get into a specific database you may use (USE database_name)
+* to show fields ( columns) from a table use :
+	1- SHOW FULL COLUMNS FROM table_name
+	2- SHOW COLUMNS FROM table_name
+	3- SHOW FIELDS FROM table_name
+* to show rows you use (select)-->> CHECK (6-list_values.sql)
