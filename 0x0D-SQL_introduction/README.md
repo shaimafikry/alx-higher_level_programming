@@ -18,3 +18,5 @@ NOTES:
 	2- SHOW COLUMNS FROM table_name
 	3- SHOW FIELDS FROM table_name
 * to show rows you use (select)-->> CHECK (6-list_values.sql)
+* to add a new row -->> CHECK (7-insert_value.sql)
+* 
