@@ -11,3 +11,5 @@ NOTES:
 * data type of every columns is written directly next to it without any additional data
 	ex :  id INT (column name id of type INT) -->> CHECK (4-first_table.sql)
 * we can use if conditoin in sql -->> CHECK (1-create_database_if_missing.sql, 2-remove_database.sql)
+* to show decription of how u created a table you can use -->> CHECK (5-full_table.sql)
+* to get into a specific database you may use (USE database_name)
