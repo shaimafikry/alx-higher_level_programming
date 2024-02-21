@@ -20,3 +20,5 @@ NOTES:
 * to show rows you use (select)-->> CHECK (6-list_values.sql)
 * to add a new row -->> CHECK (7-insert_value.sql, 9-full_creation.sql)
 *  to know the count of rows -->> CHECK (8-count_89.sql)
+* (ASC, DESC) used to show results in order-->> CHECK (10-top_score.sql)
+* to get the average value of a column in a table and give a name to result -->> CHECK (14-average.sql)
