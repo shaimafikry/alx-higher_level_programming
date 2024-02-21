@@ -22,3 +22,8 @@ NOTES:
 *  to know the count of rows -->> CHECK (8-count_89.sql)
 * (ASC, DESC) used to show results in order-->> CHECK (10-top_score.sql)
 * to get the average value of a column in a table and give a name to result -->> CHECK (14-average.sql)
+* you may need to check if the data is null before showing it -->> CHECK (16-no_link.sql)
+* The GROUP BY clause in SQL is used to group rows that have the same values in specified columns into summary rows,
+   like "total quantity" or "average salary."
+   It's often used with aggregate functions (like COUNT, MAX, MIN, SUM, AVG) to perform calculations on each group of
+   rows. -->> CHECK (15-groups.sql)
