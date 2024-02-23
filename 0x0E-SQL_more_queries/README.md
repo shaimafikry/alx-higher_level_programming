@@ -14,7 +14,7 @@ SQL - More queries
 
 * How to manage privileges for a user to a database or table
 	- if you want to give privillage to user , you have to own it first as a user
-	- how ? like this :
+	- how ? like this :-->>check (2-create_read_user.sql)
 		GRANT (privilage) # add more sepreated by comma (like: CREAT, INSERTM DROP..ETC), use (ALL)to give all
 		ON database.table # data you give priviliage on , upu can replace it with *.* to give priv on all databases
 		TO username 		# the user name you want to give privilage to
@@ -22,6 +22,7 @@ SQL - More queries
 	- how to take priviliage back ?
 		-sure, do this:
 			REVOKE type_of_permission ON database_name.table_name FROM 'username'@'host';
+
 What’s a PRIMARY KEY
 What’s a FOREIGN KEY
 How to use NOT NULL and UNIQUE constraints
