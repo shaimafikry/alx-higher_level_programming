@@ -15,7 +15,7 @@ SQL - More queries
 * How to manage privileges for a user to a database or table
 	- if you want to give privillage to user , you have to own it first as a user
 	- how ? like this :
-		GRANT (privilage) # add more sepreated by comma (like: CREAT, INSERTM DROP..ETC), use (ALL PRIVILAGES)to give all
+		GRANT (privilage) # add more sepreated by comma (like: CREAT, INSERTM DROP..ETC), use (ALL)to give all
 		ON database.table # data you give priviliage on , upu can replace it with *.* to give priv on all databases
 		TO username 		# the user name you want to give privilage to
 		WITH GRANT OPTION	#this line to make the user able to give privilages too
