@@ -1,5 +1,5 @@
 SQL - More queries
-* How to create a new MySQL user
+* How to create a new MySQL user?-->> CHECK (1-create_user.sql)
 	- you may create a user by (mysql> CREATE USER "username@host" IDENTIFIED BY "password)
 	* how about authentication plugin ?
 		- it's added by defult when you use this way ^ (default = caching_sha2_password )
