@@ -23,9 +23,31 @@ SQL - More queries
 		-sure, do this:
 			REVOKE type_of_permission ON database_name.table_name FROM 'username'@'host';
 
+* How to use NOT NULL and UNIQUE constraints?
+	- it can be added right beside the type of the columns -->> CHECK ( 3-force_name.sql, 5-unique_id.sql)
+	- there are a bunch of constrains on mysql columns like:
+		-- NOT NULL 	# cant hold a null value
+		-- UNIQUE		# cant hold the same value twice
+		-- PRIMARY KEY  # uniquely identifies each record in a database table
+						The PRIMARY KEY constraint uniquely identifies each record in a database table. It is a special case of unique keys. Primary keys cannot be NULL, unique keys can be. There can be more UNIQUE columns, but only one primary key in a table. Primary keys are important when designing the database tables. Primary keys are unique ids. We use them to refer to table rows. Primary keys become foreign keys in other tables, when creating relations among tables.
+		-- FOREIGN KEY  # A FOREIGN KEY in one table points to a PRIMARY KEY in another table
+						A FOREIGN KEY in one table points to a PRIMARY KEY in another table. It is a referential constraint between two tables. The foreign key identifies a column or a set of columns in one (referencing) table that refers to a column or set of columns in another (referenced) table.
+						what would foreign key enforcement mean when use? 
+							after we create a column in table_2 with the same name in table_1 that are related 
+							We could not insert a row into table_2.name not exists in table_1.name.
+		-- ENUM 		#string object with a value chosen from a list of permitted values. They are enumerated explicitly in the 
+						column specification at table creation time. we can put values like ('v1', 'v2', 'v3', etc)
+		-- SET 			#string object with a value chosen from a list of permitted values. They are enumerated explicitly in the 
+							column specification at table creation time.
+		-- CHECK  		#for database to check valid data
+
+		* NOTES:
+			ENUM and SET propably the same in concept but enum allows only one value to be stored in  row and set allows one or more
+
+	
 What’s a PRIMARY KEY
 What’s a FOREIGN KEY
-How to use NOT NULL and UNIQUE constraints
+
 How to retrieve datas from multiple tables in one request
 What are subqueries
 What are JOIN and UNION
