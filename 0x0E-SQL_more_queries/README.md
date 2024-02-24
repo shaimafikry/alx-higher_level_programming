@@ -60,3 +60,10 @@ What are subqueries?
 	Subqueries, also known as inner queries or nested queries, are a powerful tool in SQL that allows you to perform operations in multiple steps within a single query. They can be used in various parts of a query, including the SELECT, FROM, WHERE, JOIN, and HAVING clauses. The subquery, or inner query, executes first, and its results are then used by the outer query. This functionality enables complex data manipulation and analysis within a single SQL statement.
 
 What are JOIN and UNION?
+
+
+* Different functions:
+ - IF(EXP, true, false)
+ - NULLIF(exps, exps) returns null if two exps are equal or first exp if not
+ - IFNULL(exp, exp)  It takes two arguments: the first is the expression to check for null, and the second is the value to return if 					the first expression is null.
+ -
