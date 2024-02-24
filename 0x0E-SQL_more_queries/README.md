@@ -50,6 +50,13 @@ SQL - More queries
 	We could not insert a row into table_2.name not exists in table_1.name.
 
 * How to retrieve datas from multiple tables in one request?
+	-by using JOIN, types:
+		- INNER JOIN (JOIN):
+		- LEFT JOIN (LEFT OUTER JOIN):
+		- RIGHT JOIN (RIGH OUTER JOIN):
 
-What are subqueries
-What are JOIN and UNION
+What are subqueries?
+	-it's like  command inside a command
+	Subqueries, also known as inner queries or nested queries, are a powerful tool in SQL that allows you to perform operations in multiple steps within a single query. They can be used in various parts of a query, including the SELECT, FROM, WHERE, JOIN, and HAVING clauses. The subquery, or inner query, executes first, and its results are then used by the outer query. This functionality enables complex data manipulation and analysis within a single SQL statement.
+
+What are JOIN and UNION?
