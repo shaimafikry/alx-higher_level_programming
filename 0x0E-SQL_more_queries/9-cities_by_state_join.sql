@@ -2,4 +2,5 @@
 
 SELECT cities.id, cities.name, states.name
 FROM cities NATURAL JOIN states
+WHERE state_id.cities = states.id
 ORDER BY cities.id ASC;
