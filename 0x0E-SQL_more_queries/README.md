@@ -54,6 +54,13 @@ SQL - More queries
 		- INNER JOIN (JOIN):
 		- LEFT JOIN (LEFT OUTER JOIN):
 		- RIGHT JOIN (RIGH OUTER JOIN):
+		the left table : is the table before the join
+		the right table is the table after the join
+		* Key Points:
+			The left table is the one whose rows are returned in their entirety, regardless of whether there are matching rows in the right table.
+			The right table's rows are only returned if there is a match in the left table based on the join condition.
+			The choice between using a LEFT JOIN or a RIGHT JOIN depends on which table's rows you want to ensure are returned in full.
+
 
 What are subqueries?
 	-it's like  command inside a command
