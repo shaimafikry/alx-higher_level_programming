@@ -2,8 +2,8 @@
 
 SELECT cities.id, cities.name FROM hbtn_0d_usa.cities
 WHERE cities_id = (
-	SELECT state_id
+	SELECT state_id.states
 	FROM hbtn_0d_usa.states
-	WHERE name = 'California'
+	WHERE states.name = 'California'
 )
 ORDER BY cities.id ASC;
