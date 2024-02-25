@@ -51,26 +51,47 @@ SQL - More queries
 
 * How to retrieve datas from multiple tables in one request?
 	-by using JOIN, types:
-		- INNER JOIN (JOIN):
-		- LEFT JOIN (LEFT OUTER JOIN):
-		- RIGHT JOIN (RIGH OUTER JOIN):
-		the left table : is the table before the join
-		the right table is the table after the join
+		- INNER JOIN (JOIN): takes all  equals on both tables
+		- LEFT JOIN (LEFT OUTER JOIN): takes all equals on left table even if there is no data in right table that meets it 
+			(shows NULL instead)
+		- RIGHT JOIN (RIGH OUTER JOIN): takes all equals on right table even if there is no data in left table that meets it 
+			(shows NULL instead)
+
+		- the left table : is the table before the join
+		- the right table is the table after the join
 		* Key Points:
 			The left table is the one whose rows are returned in their entirety, regardless of whether there are matching rows in the right table.
 			The right table's rows are only returned if there is a match in the left table based on the join condition.
 			The choice between using a LEFT JOIN or a RIGHT JOIN depends on which table's rows you want to ensure are returned in full.
 
 
-What are subqueries?
+* What are subqueries?
 	-it's like  command inside a command
 	Subqueries, also known as inner queries or nested queries, are a powerful tool in SQL that allows you to perform operations in multiple steps within a single query. They can be used in various parts of a query, including the SELECT, FROM, WHERE, JOIN, and HAVING clauses. The subquery, or inner query, executes first, and its results are then used by the outer query. This functionality enables complex data manipulation and analysis within a single SQL statement.
 
-What are JOIN and UNION?
+* What are JOIN and UNION?
+	-join acts as two tables puts together sie to side based on shared column.
+	- there is must be one shared column at least to do the join , ot a columns with the same data type
+	  you can do more that one join and the result becomes the new data for the other join statment
 
+	  UNION:
+	  collect data from tow select in one vertical result.
 
 * Different functions:
  - IF(EXP, true, false)
  - NULLIF(exps, exps) returns null if two exps are equal or first exp if not
- - IFNULL(exp, exp)  It takes two arguments: the first is the expression to check for null, and the second is the value to return if 					the first expression is null.
+ - IFNULL(exp, exp)  It takes two arguments: the first is the expression to check for null, and the second is the value to return if 
+ 	the first expression is null.
  -
+
+* WHAT is the order of command excuted in sql ?
+
+	1 - FROM/JOIN: The FROM and/or JOIN clauses are executed first to determine the data of interest. This step merges the specified 
+		tables and views into a single working set of data.
+	2 - WHERE: The WHERE clause is executed to filter out records that do not meet the specified conditions.
+	3 - GROUP BY: If a GROUP BY clause is present, it groups the filtered records based on the specified columns.
+	4 - HAVING: The HAVING clause is executed to remove groups that do not meet the specified conditions.
+	5 - SELECT: The SELECT clause is executed to derive all desired columns and expressions. This step operates on the result of the 
+		previous operations, including any filtering, grouping, or joining that has occurred.
+	6 - ORDER BY: The ORDER BY clause sorts the results based on the specified columns in either ascending or descending order.
+	7 - LIMIT/OFFSET: Finally, the LIMIT and/or OFFSET clauses are executed to keep or skip a specified number of rows.
