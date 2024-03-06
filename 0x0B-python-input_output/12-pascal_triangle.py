@@ -3,6 +3,14 @@
     """
  
 def pascal_triangle(n):
+    """tkes n and returns pascal triangle
+
+    Args:
+        n (int): num to be managed
+
+    Returns:
+        list_: in a pascal mode
+    """
     if n <= 0:
         return []
     m_list = [[1], [1,1]]
