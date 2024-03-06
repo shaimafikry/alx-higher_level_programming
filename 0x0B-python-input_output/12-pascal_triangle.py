@@ -13,10 +13,11 @@ def pascal_triangle(n):
     """
     if n <= 0:
         return []
-    m_list = [[1], [1,1]]
+    m_list = [[1]]
     # print ( "this before loop", m_list)
     new_list = []
-    while n > 0:
+    m = 1
+    while m < n:
         loop_list = m_list[-1]
         # print ("this before loop after assignng the last list ", loop_list)
         new_list = []
@@ -29,5 +30,5 @@ def pascal_triangle(n):
         # print ( "this after adding 1 loop", new_list)
         m_list.append(new_list)
         # print ( "this after each  loop", m_list)
-        n -= 1
+        m += 1
     return m_list
