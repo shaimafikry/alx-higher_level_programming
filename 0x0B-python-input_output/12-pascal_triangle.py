@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 """pasacal traingle
     """
- 
+
+
 def pascal_triangle(n):
     """tkes n and returns pascal triangle
 
@@ -24,7 +25,7 @@ def pascal_triangle(n):
         for i in range(len(loop_list)):
             # print ("this is i", i)
             if i != len(loop_list) - 1:
-                new_list.append(loop_list[i] + loop_list[i+1])
+                new_list.append(loop_list[i] + loop_list[i + 1])
             # print ( "this after elemnt ", new_list)
         new_list = [1] + new_list + [1]
         # print ( "this after adding 1 loop", new_list)
