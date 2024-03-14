@@ -8,4 +8,10 @@ loading ...
 * how to make it one step ?
 	by using the distructuring assigment syntax
 	const {argv } = require (node: process)
-	
+* WAYS to convert between types in java:
+	* FROM STRING TO INT :
+	-  Number(variable), parseInt (variable), (+variable) --> check 5-to_integer.js
+			if cant beconverted it returns (NaN)-->not a number , we check for it using isNaN()
+	* FROM INT TO STRING:
+	- String(): String(variable)
+	- toString: variable.toString()
