@@ -2,8 +2,8 @@
 const process = require('node:process');
 function biggest (argv) {
   let m;
-  let big = +argv[2];
-  let sBiggest = +argv[2];
+  let big = 0;
+  let sBiggest = 0;
   for (m = 2; !(isNaN(+argv[m])); m++) {
     if (big <= +argv[m]) {
       big = +argv[m];
