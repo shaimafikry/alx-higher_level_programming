@@ -6,7 +6,7 @@ let i = 0;
 let m = 0;
 while (i < x) {
   while (m < x) {
-    process.stdout.write('x');
+    process.stdout.write('X');
     m++;
   }
   process.stdout.write('\n');

@@ -1,10 +1,7 @@
 #!/usr/bin/node
 let i = 0;
-while (i < 3) {
-  console.log('C is fun');
-  i++;
-  console.log('Python is cool');
-  i++;
-  console.log('JavaScript is amazing');
+const va = ['C is fun', 'Python is cool', 'JavaScript is amazing'];
+while (i < va.length) {
+  console.log(va[i]);
   i++;
 }
