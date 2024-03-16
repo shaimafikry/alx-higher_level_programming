@@ -7,15 +7,15 @@ class Rectangle {
       this.height = h;
     }
   }
-  print(){
-	for (let i = 0; i < this.height; i++){
-		for (let m = 0; m < this.width; m++)
-		{
-			process.stdout.write('X');
-		}
-		console.log();
+
+  print () {
+    for (let i = 0; i < this.height; i++) {
+      for (let m = 0; m < this.width; m++) {
+        process.stdout.write('X');
+      }
+      console.log();
+    }
   }
-};
 }
 
 module.exports = Rectangle;
