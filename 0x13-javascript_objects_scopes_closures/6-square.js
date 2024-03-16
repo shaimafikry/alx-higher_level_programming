@@ -4,17 +4,11 @@ class Square {
 	charPrint(c) {
 
 		if (c){
-			for (let i = 0; i < this.height; i++){
-				for (let m = 0; m < this.width; m++)
-				{
-					process.stdout.write(c);
-				}
-				console.log();
+			for (let i = 0; i < this.height; i++) {
+				console.log(c.repeat(size));
 		  }
-
 		}
 		else {
-
 			Square.print();
 		}
 	}
