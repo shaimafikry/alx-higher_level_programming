@@ -4,7 +4,7 @@ class Square extends baseSquare{
 	charPrint(c) {
 		if (c){
 			for (let i = 0; i < this.height; i++) {
-				console.log(c.repeat(size)); }
+				console.log(c.repeat(this.height)); }
 		}
 		else {
 			baseSquare.print();	}
