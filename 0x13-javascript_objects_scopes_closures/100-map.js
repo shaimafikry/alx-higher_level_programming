@@ -2,7 +2,7 @@
 const list = require('./100-data').list;
 let newList = [];
 // with map
-newList = list.map((x) => x * list.indexOf(x));
+newList = list.map((x) => x * indexOf(x));
 // without map
 // for (let i = 0; i < list.length; i++)
 // {
