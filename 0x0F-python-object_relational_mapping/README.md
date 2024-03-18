@@ -2,7 +2,7 @@
 
 	db_connect = MySQLdb.connect => begins the connection
 	cursor = db_connect.cursor() => begind th curser
-	cursor.excute => hold the query orders <br>
-	query_rows = sql_order.fetchall() => holds all the data <br>
-	cursor.close() => closes the cursor <br>
-	db_connect.close() => closes the connection <br>
+	cursor.excute => hold the query orders
+	query_rows = sql_order.fetchall() => holds all the data 
+	cursor.close() => closes the cursor
+	db_connect.close() => closes the connection
