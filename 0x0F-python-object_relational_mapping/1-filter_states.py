@@ -15,7 +15,7 @@ if __name__ == "__main__":
     db_access = MySQLdb.connect(host, u_name, u_pass, db_name, charset="utf8")
     sql_order = db_access.cursor()
     sql_order.execute(
-        "SELECT * FROM states WHERE name RLIKE '^N' OR '^n' ORDER BY states.id ASC;"
+        "SELECT * FROM states WHERE name RLIKE '^N' ORDER BY states.id ASC;"
     )
     query_rows = sql_order.fetchall()
     for row in query_rows:
