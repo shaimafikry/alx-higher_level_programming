@@ -7,5 +7,7 @@
 	cursor.close() => closes the cursor
 	db_connect.close() => closes the connection
 
-* We can use REGEX to search for specific names in sql tables :
+* We can use Wild card to search for specific names in sql tables :
 	<div> SELECT * FROM states WHERE name LIKE 'N%' ORDER BY states.id ASC; </div>
+	or with using regex
+	<div> SELECT * FROM states WHERE name LIKE '^N' OR '^n' ORDER BY states.id ASC; </div>
