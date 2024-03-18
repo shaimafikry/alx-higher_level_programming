@@ -6,3 +6,6 @@
 	query_rows = sql_order.fetchall() => holds all the data 
 	cursor.close() => closes the cursor
 	db_connect.close() => closes the connection
+
+* We can use REGEX to search for specific names in sql tables :
+	<div> SELECT * FROM states WHERE name LIKE 'N%' ORDER BY states.id ASC; </div>
