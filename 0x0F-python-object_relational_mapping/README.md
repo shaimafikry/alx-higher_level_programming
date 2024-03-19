@@ -14,3 +14,6 @@
 
 * when you call a variable in sql command , you put (%s) and add in tuple form (state_name, )
 	sql_order.execute("SELECT * FROM states WHERE name = %s ORDER BY states.id ASC;",(state_name,))
+
+* SQL injection:
+	
