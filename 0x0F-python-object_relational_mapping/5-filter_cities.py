@@ -15,11 +15,13 @@ if __name__ == "__main__":
     db_access = MySQLdb.connect(host, u_name, u_pass, db_name, port)
     sql_order = db_access.cursor()
     sql_order.execute(
-        "SELECT * FROM cities JOIN states WHERE states.name = %s ORDER BY cities.id ASC;",
-        (argv[4],)
+        "SELECT name FROM cities WHERE state_id = (SELECT id from states WHERE name = %s) ORDER BY cities.id ASC;",
+        (argv[4],),
     )
+    n_list = []
     query_rows = sql_order.fetchall()
     for row in query_rows:
-        print(row)
+        n_list.append(row[0])
+    print(", ".join(n_list))
     sql_order.close()
     db_access.close()
