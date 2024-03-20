@@ -26,6 +26,7 @@
 		* REGEXP_LIKE(name, '^N'); <br>
 		- in case you want it case sensitive , to show only upper case N: <br>
 				* REGEXP_LIKE(name, '^N' COLLATE utf8mb4_0900_as_cs)
+				* LIKE BINARY 'N%'
 		[more detials](https://dev.mysql.com/doc/mysql-tutorial-excerpt/8.3/en/pattern-matching.html)
 		
 		
