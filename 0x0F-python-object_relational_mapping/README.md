@@ -1,4 +1,4 @@
-<h> Python - Object-relational mapping </h>
+<h1> Python - Object-relational mapping </h1>
 
 	db_connect = MySQLdb.connect => begins the connection
 	cursor = db_connect.cursor() => begind th curser
