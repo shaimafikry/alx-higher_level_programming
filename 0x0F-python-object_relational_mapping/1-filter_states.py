@@ -14,7 +14,7 @@ if __name__ == "__main__":
     host = "localhost"
     db_access = MySQLdb.connect(host, u_name, u_pass, db_name, port)
     sql_order = db_access.cursor()
-    sql_text = "SELECT * FROM states WHERE name RLIKE '^N' ORDER BY id ASC;"
+    sql_text = "SELECT * FROM states WHERE REGEXP_LIKE(name, '^N' COLLATE utf8mb4_0900_as_cs);"
     sql_order.execute(sql_text)
     query_rows = sql_order.fetchall()
     for row in query_rows:
