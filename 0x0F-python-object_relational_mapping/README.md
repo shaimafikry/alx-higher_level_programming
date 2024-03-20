@@ -7,11 +7,6 @@
 	cursor.close() => closes the cursor
 	db_connect.close() => closes the connection
 <h>
-* We can use Wild card to search for specific names in sql tables :
-	<div> SELECT * FROM states WHERE name LIKE 'N%' ORDER BY states.id ASC; </div>
-	or with using regex <br>
-	<div> SELECT * FROM states WHERE name LIKE '^N' OR '^n' ORDER BY states.id ASC; </div>
-
 * when you call a variable in sql command , you put (%s) and add in tuple form (state_name, ) <br>
 	sql_order.execute("SELECT * FROM states WHERE name = %s ORDER BY states.id ASC;",(state_name,))
 
@@ -25,8 +20,8 @@
 
 	if i want to search for names starts with letter (n)
 	i can use :
-		* LIKE 'N%' => to  use wild cards
-		* RLIKE '^N' => to use regex
+		* LIKE 'N%' => to  use wild cards => SELECT * FROM states WHERE name LIKE 'N%' ORDER BY states.id ASC;
+		* RLIKE '^N' => to use regex => SELECT * FROM states WHERE name RLIKE '^N' OR '^n' ORDER BY states.id ASC;
 		* REGEXP_LIKE(name, 'N%' COLLATE utf8mb4_0900_as_cs);
 		* REGEXP_LIKE(name, '^N');
 		- in case you want it case sensitive , to show only upper case N:
