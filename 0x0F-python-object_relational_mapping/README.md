@@ -16,4 +16,22 @@
 	sql_order.execute("SELECT * FROM states WHERE name = %s ORDER BY states.id ASC;",(state_name,))
 
 * SQL injection:
+	- happesn when you use concating to add user input to the sql command
+	- this  allow hackers to add (Sql statements instead of (normal user input) and make it run to ur database)
+	*To Avoid this => use string formts (%s) to hanlde user input and adding it to the sql command
+	[more details](https://www.w3schools.com/sql/sql_injection.asp)
+* SQL search patterns
+* SQL search is not case sensitive :
+
+	if i want to search for names starts with letter (n)
+	i can use :
+		* LIKE 'N%' => to  use wild cards
+		* RLIKE '^N' => to use regex
+		* REGEXP_LIKE(name, 'N%' COLLATE utf8mb4_0900_as_cs);
+		* REGEXP_LIKE(name, '^N');
+		- in case you want it case sensitive , to show only upper case N:
+				* REGEXP_LIKE(name, '^N' COLLATE utf8mb4_0900_as_cs)
+		[more detials](https://dev.mysql.com/doc/mysql-tutorial-excerpt/8.3/en/pattern-matching.html)
+		
+		
 	
