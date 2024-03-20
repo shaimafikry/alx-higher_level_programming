@@ -20,11 +20,11 @@
 
 	if i want to search for names starts with letter (n)
 	i can use :
-		* LIKE 'N%' => to  use wild cards => SELECT * FROM states WHERE name LIKE 'N%' ORDER BY states.id ASC;
-		* RLIKE '^N' => to use regex => SELECT * FROM states WHERE name RLIKE '^N' OR '^n' ORDER BY states.id ASC;
-		* REGEXP_LIKE(name, 'N%' COLLATE utf8mb4_0900_as_cs);
-		* REGEXP_LIKE(name, '^N');
-		- in case you want it case sensitive , to show only upper case N:
+		* LIKE 'N%' => to  use wild cards => SELECT * FROM states WHERE name LIKE 'N%' ORDER BY states.id ASC; <br>
+		* RLIKE '^N' => to use regex => SELECT * FROM states WHERE name RLIKE '^N' OR '^n' ORDER BY states.id ASC; <br>
+		* REGEXP_LIKE(name, 'N%' COLLATE utf8mb4_0900_as_cs); <br>
+		* REGEXP_LIKE(name, '^N'); <br>
+		- in case you want it case sensitive , to show only upper case N: <br>
 				* REGEXP_LIKE(name, '^N' COLLATE utf8mb4_0900_as_cs)
 		[more detials](https://dev.mysql.com/doc/mysql-tutorial-excerpt/8.3/en/pattern-matching.html)
 		
