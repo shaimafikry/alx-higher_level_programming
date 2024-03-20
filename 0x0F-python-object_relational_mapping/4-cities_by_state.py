@@ -14,7 +14,12 @@ if __name__ == "__main__":
     host = "localhost"
     db_access = MySQLdb.connect(host, u_name, u_pass, db_name, port)
     sql_order = db_access.cursor()
-    sql_order.execute("SELECT * FROM cities  NATURAL JOIN states ORDER BY cities.id ASC;")
+    sql_text = (
+        "SELECT cities.id, cities.name, states.name "
+        "FROM cities JOIN states ON cities.state_id = states.id "
+        "ORDER BY cities.id ASC"
+    )
+    sql_order.execute(sql_text)
     query_rows = sql_order.fetchall()
     for row in query_rows:
         print(row)
