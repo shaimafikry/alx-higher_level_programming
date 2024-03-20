@@ -14,9 +14,8 @@ if __name__ == "__main__":
     host = "localhost"
     db_access = MySQLdb.connect(host, u_name, u_pass, db_name, port)
     sql_order = db_access.cursor()
-    sql_order.execute(
-        "SELECT * FROM states WHERE name = %s ORDER BY states.id ASC;", (argv[4],)
-    )
+    sql_text = "SELECT * FROM states WHERE name = @0 ORDER BY states.id ASC;"
+    sql_order.execute(sql_text, (argv[4]))
     query_rows = sql_order.fetchall()
     for row in query_rows:
         print(row)
