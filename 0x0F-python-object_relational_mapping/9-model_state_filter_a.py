@@ -17,7 +17,10 @@ if __name__ == "__main__":
     )
     Base.metadata.create_all(engine)
     session = Session(engine)
-    # select * from states order by states.id
-    for state in session.query(State).having('%/a%').order_by(State.id).all():
+    # select * from states where name like '%a%' order by states.id
+    state_filter = session.query(State).filter(State.name.contains("a"))
+    for state in (
+       state_filter.order_by(State.id).all()
+    ):
         print("{}: {}".format(state.id, state.name))
     session.close()
