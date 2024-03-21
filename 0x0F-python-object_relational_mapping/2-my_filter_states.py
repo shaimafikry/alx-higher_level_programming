@@ -14,7 +14,7 @@ if __name__ == "__main__":
     host = "localhost"
     db_access = MySQLdb.connect(host, u_name, u_pass, db_name, port)
     sql_order = db_access.cursor()
-    sql_text = """SELECT * FROM states WHERE name =
+    sql_text = """SELECT * FROM states WHERE BINARY name =
                 "{}" ORDER BY states.id ASC;""".format(argv[4])
     sql_order.execute(sql_text)
     query_rows = sql_order.fetchall()
