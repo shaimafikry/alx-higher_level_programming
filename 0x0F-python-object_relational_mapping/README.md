@@ -30,4 +30,8 @@
 		[more detials](https://dev.mysql.com/doc/mysql-tutorial-excerpt/8.3/en/pattern-matching.html)
 		
 		
+* .commit():
+	is used when i want to modifiy something in a table, it saves the modification.
+	otherwise, not nedded.
+
 	
