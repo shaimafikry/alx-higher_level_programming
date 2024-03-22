@@ -12,6 +12,7 @@ if __name__ == "__main__":
     port = "3306"
     host = "localhost"
     db_access = MySQLdb.connect(host, u_name, u_pass, db_name, charset="utf8")
+    
     sql_order = db_access.cursor()
     sql_order.execute("SELECT * FROM states ORDER BY states.id ASC;")
     query_rows = sql_order.fetchall()

@@ -1,13 +1,13 @@
 #!/usr/bin/python3
-"""Start link class to table in database
+"""add a state and a city related to with a relationship ()
 """
 
 import sys
 from relationship_state import Base, State
-from relationship_city import City
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
 from sqlalchemy.orm import sessionmaker
+from relationship_city import Base, City
 
 
 if __name__ == "__main__":
@@ -21,7 +21,7 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     session = sessionmaker(bind=engine)
     session = Session(engine)
-    new_state = session.add(State(name='California'))
-    new_city = session.add(City(name='San Francisco'), state=new_state)
+    new_state = session.add(State(name='California', id=1))
+    new_city = session.add(City(name='San Francisco', id=1))
     session.commit()
     session.close()
