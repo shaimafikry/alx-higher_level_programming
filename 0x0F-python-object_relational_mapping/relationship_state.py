@@ -4,7 +4,6 @@
 from sqlalchemy.orm import relationship, backref
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
-from relationship_city import Base, City
 Base = declarative_base()
 
 
