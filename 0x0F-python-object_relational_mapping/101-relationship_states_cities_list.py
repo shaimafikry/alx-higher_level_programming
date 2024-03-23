@@ -23,7 +23,6 @@ if __name__ == "__main__":
     for state in data:
         print("{}: {}".format(state.id, state.name))
         for city in state.cities:
-            i += 1
-            print('    ', "{}: {}".format(i, city.name))
+            print('    ', "{}: {}".format(city.id, city.name))
     # ends my connection
     session.close()
