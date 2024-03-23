@@ -5,7 +5,6 @@
 from sys import argv
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
-from sqlalchemy.orm import sessionmaker
 from relationship_state import State, Base
 from relationship_city import City
 
@@ -25,6 +24,6 @@ if __name__ == "__main__":
         print("{}: {}".format(state.id, state.name))
         for city in state.cities:
             i += 1
-            print('\t', "{}: {}".format(i, city.name))
+            print('    ', "{}: {}".format(i, city.name))
     # ends my connection
     session.close()
