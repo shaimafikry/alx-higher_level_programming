@@ -1,11 +1,10 @@
 #!/usr/bin/python3
 """ this module connect the database with python using argv
 """
-
+from sqlalchemy.orm import relationship, backref
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import relationship, backref
-
+from relationship_city import Base, City
 Base = declarative_base()
 
 
@@ -17,5 +16,4 @@ class State(Base):
     name = Column(String(128), nullable=False)
     # Define the relationship to City
     # Use backref to automatically create a 'state' attribute in the City class
-
-cities = relationship("City",backref=backref('state',cascade="all, delete-orphan"))
+    cities = relationship("City", backref='state', cascade="all, delete")

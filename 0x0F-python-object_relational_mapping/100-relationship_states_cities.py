@@ -3,12 +3,11 @@
 """
 
 import sys
-from relationship_city import City
-from relationship_state import State, Base
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
 from sqlalchemy.orm import sessionmaker
-
+from relationship_state import State, Base
+from relationship_city import City
 
 
 if __name__ == "__main__":
@@ -22,11 +21,6 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     session = sessionmaker(bind=engine)
     session = Session(engine)
-    new_state = State(name='California',id=1)
-    session.add(new_state)
-    session.commit()
-    new_city = City(name='San Francisco', state_id=new_state.id)
+    new_city = City(name='San Francisco', state=State(name='California'))
     session.add(new_city)
     session.commit()
-    
-    session.close()
