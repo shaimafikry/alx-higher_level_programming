@@ -12,18 +12,19 @@ from relationship_city import City
 
 if __name__ == "__main__":
     # make connection
-    engine = create_engine("mysql+mysqldb://{}:{}@localhost/{}".format(argv[1],argv[2],argv[3]),pool_pre_ping=True)
+    engine = create_engine("mysql+mysqldb://{}:{}@localhost/{}".format(
+        argv[1], rgv[2], argv[3]), pool_pre_ping=True)
     # creates all table or retrive the data from db
     Base.metadata.create_all(engine)
-    # starting my session incase imma gonna add soething
-    session = sessionmaker(bind=engine)
+    # starting my session
     session = Session(engine)
-    data = session.query(City, State).filter(City.state_id==State.id).order_by(City.id, State.id)
-    print (data)
+    # get all states with related city (power of relationship)
+    data = session.query(State).order_by(State.id).all()
+    i = 0
     for state in data:
-        print(state.id,state.name,':')
-        for city in data:
-            print ('\t',city.id,':',city.name)
-        
+        print("{}: {}:".format(state.id, state.name))
+        for city in state.cities:
+            i += 1
+            print('\t', "{}: {}".format(i, city.name))
     # ends my connection
     session.close()
