@@ -13,7 +13,7 @@ from relationship_city import City
 if __name__ == "__main__":
     # make connection
     engine = create_engine("mysql+mysqldb://{}:{}@localhost/{}".format(
-        argv[1], rgv[2], argv[3]), pool_pre_ping=True)
+        argv[1], argv[2], argv[3]), pool_pre_ping=True)
     # creates all table or retrive the data from db
     Base.metadata.create_all(engine)
     # starting my session
