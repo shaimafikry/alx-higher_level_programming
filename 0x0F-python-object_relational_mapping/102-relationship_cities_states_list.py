@@ -5,9 +5,7 @@
 from sys import argv
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
-from sqlalchemy.orm import sessionmaker
-from relationship_state import State, Base
-from relationship_city import City
+from relationship_city import City, Base
 
 
 if __name__ == "__main__":
