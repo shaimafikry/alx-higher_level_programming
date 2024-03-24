@@ -27,4 +27,3 @@ if __name__ == "__main__":
     print(", ".join(n_list))
     sql_order.close()
     db_access.close()
-    
