@@ -22,12 +22,9 @@ if __name__ == "__main__":
     )
     sql_order.execute(sql_text, (argv[4],))
     query_rows = sql_order.fetchall()
-    string = ''
-    for i in range(0, len(query_rows)):
-        string += query_rows[i][0]
-        if i == len(query_rows) - 1:
-            break
-        string += ', '
-    print(string)
+    for row in query_rows:
+        n_list.append(row[0])
+    print(", ".join(n_list))
     sql_order.close()
     db_access.close()
+    
