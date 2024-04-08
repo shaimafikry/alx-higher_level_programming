@@ -1,4 +1,5 @@
 #!/usr/bin/node
+// represent strings as x in shape of square
 const process = require('node:process');
 const x = +process.argv[2];
 if (isNaN(x)) { console.log('Missing size'); }

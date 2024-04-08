@@ -1,4 +1,5 @@
 #!/usr/bin/node
+// get the second biggest number
 const process = require('node:process');
 function biggest (argv) {
   let m;

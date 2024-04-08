@@ -1,4 +1,5 @@
 #!/usr/bin/node
+// add two arguments aftdr converting to nmb
 const process = require('node:process');
 function add (a, b) {
   const result = a + b;

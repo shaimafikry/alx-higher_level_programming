@@ -1,3 +1,3 @@
 #!/usr/bin/node
-// global variable
+// global variable definition
 global.myVar = 333;

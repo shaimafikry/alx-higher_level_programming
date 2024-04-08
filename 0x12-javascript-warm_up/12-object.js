@@ -1,4 +1,5 @@
 #!/usr/bin/node
+// introduction to objects
 const myObject = {
   type: 'object',
   value: 12

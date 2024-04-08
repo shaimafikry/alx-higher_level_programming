@@ -1,4 +1,5 @@
 #!/usr/bin/node
+// fet factorial of a num argument
 const process = require('node:process');
 function factorial (a) {
   if (a === 0 || a === 1) { return 1; }
