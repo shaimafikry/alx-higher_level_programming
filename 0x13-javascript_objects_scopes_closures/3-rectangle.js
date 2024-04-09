@@ -1,5 +1,5 @@
 #!/usr/bin/node
-
+// make a method to represent my class rectangle
 class Rectangle {
   constructor (w, h) {
     if (h > 0 && w > 0) {

@@ -1,4 +1,6 @@
 #!/usr/bin/node
+// extends from class and use its methods
+// trying c.repeat instead of process.stdout
 const baseSquare = require('./5-square');
 class Square extends baseSquare {
   charPrint (c) {

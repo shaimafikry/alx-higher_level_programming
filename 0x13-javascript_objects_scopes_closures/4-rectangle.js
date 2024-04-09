@@ -1,5 +1,5 @@
 #!/usr/bin/node
-
+// add new methods to rectangle class
 class Rectangle {
   constructor (w, h) {
     if (h > 0 && w > 0) {

@@ -1,4 +1,5 @@
 #!/usr/bin/node
+// applly the concept of map
 const list = require('./100-data').list;
 let newList = [];
 // with map
