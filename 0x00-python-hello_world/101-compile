@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 #script that compiles a Python script file.
 file_name="$PYFILE"
 file_exc = "${$PYFILE}c"
