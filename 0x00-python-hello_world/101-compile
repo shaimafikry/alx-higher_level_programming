@@ -1,5 +1,3 @@
 #!/bin/bash
 #script that compiles a Python script file.
-file_name="$PYFILE"
-file_exc = "${$PYFILE}c"
-python -m py_compile "$PYFILE" -o "$file_exc"
+python -m "$PYFILE" -o "${PYFILE}c"
