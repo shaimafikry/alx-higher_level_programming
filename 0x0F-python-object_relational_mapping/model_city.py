@@ -9,6 +9,7 @@ from model_state import State
 Base = declarative_base()
 
 
+# contains the class definition of a City
 class City(Base):
     """ class to create table"""
 

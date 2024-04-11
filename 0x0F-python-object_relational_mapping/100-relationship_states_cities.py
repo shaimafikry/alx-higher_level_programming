@@ -9,7 +9,8 @@ from sqlalchemy.orm import sessionmaker
 from relationship_state import State, Base
 from relationship_city import City
 
-
+# script that creates the State “California” with the City “San Francisco”
+# from the database hbtn_0e_100_usa: (100-relationship_states_cities.py)
 if __name__ == "__main__":
     engine = create_engine(
         "mysql+mysqldb://{}:{}@localhost/{}".format(

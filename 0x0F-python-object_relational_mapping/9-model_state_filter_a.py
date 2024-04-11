@@ -7,7 +7,8 @@ from model_state import Base, State
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
 
-
+# script that lists all State objects that contain
+# the letter a from the database hbtn_0e_6_usa
 if __name__ == "__main__":
     engine = create_engine(
         "mysql+mysqldb://{}:{}@localhost/{}".format(

@@ -7,6 +7,7 @@ from sqlalchemy.ext.declarative import declarative_base
 Base = declarative_base()
 
 
+# modifying model_state
 class State(Base):
     """ class to create the first table"""
 

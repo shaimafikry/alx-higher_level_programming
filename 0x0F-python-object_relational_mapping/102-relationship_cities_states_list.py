@@ -7,7 +7,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
 from relationship_city import City, Base
 
-
+# script that lists all City objects from the database hbtn_0e_101_usa
 if __name__ == "__main__":
     # make connection
     engine = create_engine("mysql+mysqldb://{}:{}@localhost/{}".format(

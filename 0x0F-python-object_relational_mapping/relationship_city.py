@@ -6,6 +6,7 @@ from sqlalchemy import Column, Integer, String, ForeignKey
 from relationship_state import Base
 
 
+# modifying model_city
 class City(Base):
     """ class to create table"""
 

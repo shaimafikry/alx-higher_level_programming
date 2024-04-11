@@ -5,7 +5,8 @@
 import MySQLdb
 from sys import argv
 
-
+#  script that lists all states with a name
+# starting with N (upper N) from the database hbtn_0e_0_usa
 if __name__ == "__main__":
     u_name = argv[1]
     u_pass = argv[2]

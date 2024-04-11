@@ -8,7 +8,8 @@ from sqlalchemy.orm import Session
 from relationship_state import State, Base
 from relationship_city import City
 
-
+# script that lists all State objects, and corresponding
+# City objects, contained in the database hbtn_0e_101_usa
 if __name__ == "__main__":
     # make connection
     engine = create_engine("mysql+mysqldb://{}:{}@localhost/{}".format(

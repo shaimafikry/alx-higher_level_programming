@@ -5,7 +5,7 @@
 import MySQLdb
 from sys import argv
 
-
+# script that lists all cities from the database hbtn_0e_4_usa
 if __name__ == "__main__":
     u_name = argv[1]
     u_pass = argv[2]

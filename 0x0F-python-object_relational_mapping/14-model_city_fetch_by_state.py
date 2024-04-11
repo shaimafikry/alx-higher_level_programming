@@ -9,7 +9,8 @@ from sqlalchemy.orm import Session
 from sqlalchemy.orm import sessionmaker
 from model_city import City, Base
 
-
+# Python file similar to model_state.py named model_city.py
+# that contains the class definition of a City
 if __name__ == "__main__":
     engine = create_engine(
         "mysql+mysqldb://{}:{}@localhost/{}".format(

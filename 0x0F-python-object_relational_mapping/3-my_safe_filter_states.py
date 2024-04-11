@@ -5,7 +5,7 @@
 import MySQLdb
 from sys import argv
 
-
+# sql injection
 if __name__ == "__main__":
     u_name = argv[1]
     u_pass = argv[2]
