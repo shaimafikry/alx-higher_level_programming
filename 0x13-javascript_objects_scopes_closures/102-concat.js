@@ -14,7 +14,7 @@ try {
 } catch (err) {
   console.error('An error occurred:', err);
 }
-// to write toa file using flags
+// to write to a file
 try {
   fs.writeFileSync(argv[4], content);
   // file written successfully
