@@ -15,4 +15,4 @@ try {
   console.error('An error occurred:', err);
 }
 // to write toa file using flags
-fs.writeFile(argv[4], content, { flag: 'w+' }, err => { console.error('An error occurred:', err); });
+fs.writeFile(argv[4], content, { flag: 'w+' });
