@@ -15,4 +15,9 @@ try {
   console.error('An error occurred:', err);
 }
 // to write toa file using flags
-fs.writeFile(argv[4], content, { flag: 'w+' });
+try {
+	fs.writeFileSync(argv[4], content);
+	// file written successfully
+  } catch (err) {
+	console.error(err);
+  }
