@@ -16,8 +16,8 @@ try {
 }
 // to write toa file using flags
 try {
-	fs.writeFileSync(argv[4], content);
-	// file written successfully
-  } catch (err) {
-	console.error(err);
-  }
+  fs.writeFileSync(argv[4], content);
+  // file written successfully
+} catch (err) {
+  console.error(err);
+}
