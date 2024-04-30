@@ -1,3 +1,3 @@
 #!/bin/bash
-# script takes URL, sends Get request to URL, displays size of body of response
-curl -sX DELETE "$1" HTTP/1.1
+# Bash script that takes in a URL, sends a POST request to the passed URL, and displays the body of the response
+curl -sX POST -d "$2" -H "Content-Type: application/json" "$1"
