@@ -6,6 +6,6 @@ def find_peak(list_of_integers):
         for i in list_of_integers:
             if i > m:
                 m = i
-        return i
+        return m
     else:
         return None
