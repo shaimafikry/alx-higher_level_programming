@@ -1,3 +1,3 @@
 #!/bin/bash
 # script takes URL, takes in a URL and displays all HTTP methods
-curl -sX OPTIONS "$1" | grep Allow | awk '{print $2}'
+curl -sI "$1" | grep "Allow" | cut -d':' -f2
