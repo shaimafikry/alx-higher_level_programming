@@ -1,3 +1,3 @@
 #!/bin/bash
-# script takes URL, sends Get request to URL, displays size of body of response
-curl -sX DELETE "$1" HTTP/1.1
+# script takes URL, sends Get request to URL, displays status
+curl -s -o /dev/null -w "%{http_code}" -L "$1"
