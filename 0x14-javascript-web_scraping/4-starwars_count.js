@@ -15,7 +15,7 @@ request.get(urlPeople, function (error, response, body) {
     // console.log(charcter.name)
     let count = 0;
     let i = 0;
-    for (i = 0; i < charcter.films.length; i++) {
+    for (i = 0; i < (charcter.films).length; i++) {
       count++;
     }
     console.log((count));
