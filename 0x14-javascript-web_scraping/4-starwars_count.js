@@ -14,9 +14,10 @@ request.get(urlPeople, function (error, response, body) {
     const charcter = JSON.parse(body);
     // console.log(charcter.name)
     let count = 0;
-    charcter.films.forEach(() => {
+    let i = 0;
+    for (i = 0; i < charcter.films.length; i++) {
       count++;
-    });
+    }
     console.log((count));
   }
 });
