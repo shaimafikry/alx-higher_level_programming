@@ -20,8 +20,10 @@ request.get(url, function (error, response, body) {
           count++;
         }
       });
-      users[user] = count;
-      count = 0;
+      if (count > 0) {
+        users[user] = count;
+        count = 0;
+      }
     });
     console.log(users);
   }
