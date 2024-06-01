@@ -1,4 +1,5 @@
 #!/usr/bin/node
+// still cant get the difference between it and the prev
 // script that prints all characters of a Star Wars movie
 const request = require('request');
 // IMPORT THE ARGV
