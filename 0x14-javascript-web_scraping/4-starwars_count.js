@@ -5,8 +5,8 @@ const request = require('request');
 const { argv } = require('node:process');
 // The first argument is the movie ID
 const url = argv[2];
-const id = 'people/18/';
-const urlPeople = url.replace('films', id);
+// const id = 'people/18/';
+// const urlPeople = url.replace('films', id);
 // using function to catch the error if occured and body and response
 request.get(url, function (error, response, body) {
   if (!error && response.statusCode === 200) {
@@ -16,7 +16,7 @@ request.get(url, function (error, response, body) {
     let m = 0;
     for (i = 0; i < (films.results).length; i++) {
       for (m = 0; m < films.results[i].characters.length; m++) {
-        if (films.results[i].characters[m] === urlPeople) {
+        if (films.results[i].characters[m].includes(18)) {
           count++;
         }
       }
