@@ -5,9 +5,6 @@ const request = require('request');
 const { argv } = require('node:process');
 // The first argument is the movie ID
 const url = argv[2];
-// const id = 'people/18/';
-// const urlPeople = url.replace('films', id);
-// using function to catch the error if occured and body and response
 request.get(url, function (error, response, body) {
   if (!error && response.statusCode === 200) {
     const films = JSON.parse(body);
