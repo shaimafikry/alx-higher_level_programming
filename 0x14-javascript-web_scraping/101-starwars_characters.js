@@ -11,13 +11,14 @@ const url = 'https://swapi-api.alx-tools.com/api/films/' + filmId;
 request.get(url, function (error, response, body) {
   if (!error && response.statusCode === 200) {
     const movies = JSON.parse(body);
-    movies.characters.forEach((character) => {
-      request.get(character, function (error, response, body) {
+	let i = 0;
+    for (i = 0; i < movies.characters.length; i++) {
+      request.get(movies.characters[i], function (error, response, body) {
         if (!error && response.statusCode === 200) {
           const chart = JSON.parse(body);
           console.log(chart.name);
         }
       });
-    });
+    };
   }
 });
